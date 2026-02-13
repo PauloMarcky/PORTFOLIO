@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body style="
+             margin: 0;
+             height: 100dvh;
+             display: flex;
+             align-items: center;
+             justify-content: center;">
+  <div style="
+              display: grid;
+              grid-template-columns: 600px 400px;
+              grid-template-rows: 200px 100px 80px;
+              grid-template-areas:
+                'title profile'
+                'sub-title profile'
+                'button profile';
+              ">
+    <div style="grid-area: title; background-color: blue;"></div>
+    <div style="grid-area: sub-title; background-color: red;"></div>
+    <div style="grid-area: button;background-color: green;"></div>
+    <div style="grid-area: profile; background-color: violet;"></div>
+  </div>
+</body>
+
+</html>
