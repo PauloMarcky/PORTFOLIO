@@ -56,10 +56,11 @@
                 justify-content: center;
                 align-content: center;
                 justify-items: center;
-                margin-top: 60px;">
+                margin-top: 60px;
+                scroll-target-group: auto">
       <div style="display: flex; flex-direction: column; align-items: center;">
-        <a href="index.html">
-          <button style="background-color: #e794f17c;
+        <a href="#home">
+          <button style="background-color: #dadada;
                     width: 40px;
                     height: 40px;
                     border-radius: 20px;
@@ -67,11 +68,10 @@
               src="images/icons8-home-24.png" alt="home-button"></button>
         </a>
         <p style="margin-top: 5px;
-                font: .8em 'Segoe UI';
-                color: #7030a0;">Home</p>
+                font: .8em 'Segoe UI';">Home</p>
       </div>
       <div style="display: flex; flex-direction: column; align-items: center;">
-        <a href="about_me.html">
+        <a href="#about_me">
           <button style="background-color: #dadada;
                     width: 40px;
                     height: 40px;
@@ -105,7 +105,8 @@
       </div>
     </nav>
   </header>
-  <div style="
+  <section id="home">
+    <div style="
               background-color: hsla(288, 71%, 89%, 0.463);
               height: 550px;
               width: 78em;
@@ -115,7 +116,7 @@
               border: 5px solid white;
               position: relative;
               display: grid;
-              grid-template-columns: 700px 20em ;
+              grid-template-columns: 40em 30em ;
               grid-template-rows: 250px 90px 100px;
               grid-template-areas:
                 'name profile-pic'
@@ -123,52 +124,115 @@
                 'view-projects profile-pic';
               align-items: center;
               justify-content: center;
-              column-gap: 0px;
+              column-gap: 20px;
               margin-top: 50px;
 ">
-    <div style="grid-area: name;
+      <div style="grid-area: name;
                 padding: 0;
                 margin: 0;">
-      <h1 style=" 
+        <h1 style=" 
                 color: rgb(255, 255, 255);
                 font-size: 5em;
                 font-family: 'Trebuchet MS' ; 
                 margin: 0; 
                 align-items: center;
                "> Hello, Im Marcky <br> Paulo Balaba</h1>
-    </div>
-    <div style="grid-area: expertise;
+      </div>
+      <div style="grid-area: expertise;
                 ">
-      <h4 style="
+        <h4 style="
                color: rgb(24, 24, 24);
                font-size: 2em;
                font-family: 'Trebuchet MS';
-               text-align: left;
+               align-items: center;
                margin: 0%;">UI/UX Designer & Full Stack Developer
-      </h4>
-    </div>
-    <div style="grid-area: view-projects;
-                justify-self: center  ;
+        </h4>
+      </div>
+      <div style="grid-area: view-projects;
                 ">
-      <button style=" 
+        <button style=" 
                       width: 220px;
                       height: 50px;
-                      margin: 0;
+                      margin-left:150px;
                       border-radius: 18px;
                       border: none;
                       background-color: #7030a0;
                       color: white;
                       font-size: 1em;
                       font-family:'Segoe UI';
-                      border: 2px solid  rgb(248, 176, 255)
-                      ">
-        <b>View My Projects</b></button>
+                      border: 2px solid  rgb(248, 176, 255)">
+          <b>View My Projects</b></button>
+      </div>
+      <div style="grid-area: profile-pic;">
+        <img src="images/9c688361-a0ab-4b0d-8b8a-211d72e367dc-removebg-preview.png" alt="Profile Picture"
+          style="width: 100%; height: 100%; object-fit: cover; border-radius: 30px; object-position: 50% 15%;">
+      </div>
     </div>
-    <div style="grid-area: profile-pic;">
-      <img src="images/9c688361-a0ab-4b0d-8b8a-211d72e367dc-removebg-preview.png" alt="Profile Picture"
-        style="width: 100%; height: 100%; object-fit: cover; border-radius: 30px; object-position: 50% 15%;">
+  </section>
+  <section id="about_me">
+    <div style="
+              background-color: hsla(288, 71%, 89%, 0.463);
+              height: 550px;
+              width: 78em;
+              border-radius: 30px;
+              padding: 50px;
+              box-sizing: border-box;
+              border: 5px solid white;
+              position: relative;
+              display: grid;
+              grid-template-columns: 40em 30em ;
+              grid-template-rows: 250px 90px 100px;
+              grid-template-areas:
+                'name profile-pic'
+                'expertise profile-pic'
+                'view-projects profile-pic';
+              align-items: center;
+              justify-content: center;
+              column-gap: 20px;
+              margin-top: 50px;
+">
+      <div style="grid-area: name;
+                padding: 0;
+                margin: 0;">
+        <h1 style=" 
+                color: rgb(255, 255, 255);
+                font-size: 5em;
+                font-family: 'Trebuchet MS' ; 
+                margin: 0; 
+                align-items: center;
+               ">Im Marcky <br> Paulo Balaba</h1>
+      </div>
+      <div style="grid-area: expertise;
+                ">
+        <h4 style="
+               color: rgb(24, 24, 24);
+               font-size: 2em;
+               font-family: 'Trebuchet MS';
+               align-items: center;
+               margin: 0%;">UI/UX Designer & Full Stack Developer
+        </h4>
+      </div>
+      <div style="grid-area: view-projects;
+                ">
+        <button style=" 
+                      width: 220px;
+                      height: 50px;
+                      margin-left:150px;
+                      border-radius: 18px;
+                      border: none;
+                      background-color: #7030a0;
+                      color: white;
+                      font-size: 1em;
+                      font-family:'Segoe UI';
+                      border: 2px solid  rgb(248, 176, 255)">
+          <b>View My Projects</b></button>
+      </div>
+      <div style="grid-area: profile-pic;">
+        <img src="images/9c688361-a0ab-4b0d-8b8a-211d72e367dc-removebg-preview.png" alt="Profile Picture"
+          style="width: 100%; height: 100%; object-fit: cover; border-radius: 30px; object-position: 50% 15%;">
+      </div>
     </div>
-  </div>
+  </section>
 </body>
 
 </html>
