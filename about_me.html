@@ -26,13 +26,25 @@
                  position: fixed;
                  top: 0;
                  display: flex;
-                 justify-content: end;
-                 align-items: center;
-                 gap: 30px;
+                 flex-direction: row;
+                 justify-content:space-between;
+                 align-items: center ;
                  ">
-    <p style="font-family: 'Segoe UI'; color: white;"><small>@IT FREE ELECTIVE</small></p>
-    <p style="font-family: 'Segoe UI'; color: white; margin-right: 20px; "><small>BSIT 2-A</small></p>
-
+    <div style="font-family:Verdana; 
+                color: white; 
+                font-weight: bold; 
+                font-size: 1.3em;
+                margin-left: 60px;">
+      <p>MKY.DEV</p>
+    </div>
+    <div style="font-family: 'Segoe UI'; 
+                color: white;
+                display: flex;
+                gap: 20px;
+                margin-right: 60px;">
+      <p><small>@IT FREE ELECTIVE</small></p>
+      <p><small>BSIT 2-A</small></p>
+    </div>
   </header>
 
   <header style="
@@ -59,7 +71,7 @@
                 margin-top: 60px;">
       <div style="display: flex; flex-direction: column; align-items: center;">
         <a href="index.html">
-          <button style="background-color: #dadada;
+          <button style="background-color: #f4f4f4;
                     width: 40px;
                     height: 40px;
                     border-radius: 20px;
@@ -70,28 +82,33 @@
                 font: .8em 'Segoe UI';">Home</p>
       </div>
       <div style="display: flex; flex-direction: column; align-items: center;">
-        <button style="background-color: #e794f17c;
+        <a style="text-decoration: none;" href="about_me.html">
+          <button style="background-color: #e794f17c;
                     width: 40px;
                     height: 40px;
                     border-radius: 20px;
                     border: 2px solid rgb(157, 7, 180);"><img style="width: 20px; height: 20px;"
-            src="images/icons8-about-me-50.png" alt="about-me-button"></button>
+              src="images/icons8-about-me-50.png" alt="about-me-button"></button>
+        </a>
         <p style="margin-top: 5px;
                 font: .8em 'Segoe UI';
                 color: #7030a0;">About me</p>
+
       </div>
       <div style="display: flex; flex-direction: column; align-items: center;">
-        <button style="background-color: #dadada;
+        <a href="contact.html">
+          <button style="background-color: #f4f4f4;
                     width: 40px;
                     height:   40px;
                     border-radius: 20px;
                     border: 0;"><img style="width: 20px; height: 20px;" src="images/icons8-contact-30.png"
-            alt="contact-info-button"></button>
+              alt="contact-info-button"></button>
+        </a>
         <p style="margin-top: 5px;
                 font: .8em 'Segoe UI'">Contacts</p>
       </div>
       <div style="display: flex; flex-direction: column; align-items: center;">
-        <button style="background-color: #dadada;
+        <button style="background-color: #f4f4f4;
                     width: 40px;
                     height: 40px;
                     border-radius: 20px;
@@ -115,7 +132,7 @@
                 'image contacts';
               justify-content: center;
               align-content: center;
-              margin-top: 0;
+              margin-top: 20px;
               ">
     <div style="
                 grid-area: image;
@@ -140,9 +157,9 @@
       <div>
         <h1 style="
                 text-align: left;
-                color: #000000;
+                color: #ffffff;
                 font-family: 'Trebuchet MS';
-                font-size: 3em;
+                font-size: 4em;
                 margin-top: 70px;
                 margin-bottom: 0;
                 font-weight: bold;">ABOUT ME
@@ -151,12 +168,12 @@
       <div>
         <h2 style="
                 text-align: left;
-                color: #e40505;
-                font-family: 'Trebuchet MS';
+                color: #260044;
+                font-family: 'Arial';
                 font-size: 1.5em;
                 margin-top: 20px;
                 margin-bottom: 20px;
-                font-weight: 500;
+                font-weight: bold;
                 ">Marcky Paulo Balaba (Pau-pau)
         </h2>
       </div>
@@ -165,16 +182,17 @@
                 text-align: left;
                 color: #ffffff;
                 font-family:'Segoe UI';
-                font-weight: 300;
+                font-weight: 400;
                 font-size: 1.1em;
                 margin-top: 10px;
                 text-align: justify;
-                ">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quidem, quisquam minima? Repudiandae
-          voluptatibus voluptates dolorum quidem asperiores porro maiores! Odit explicabo atque veritatis saepe
-          excepturi cupiditate, dolor et quo voluptatem?<br> <br>
-          Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sequi, hic? Quisquam obcaecati pariatur unde,
-          laboriosam nostrum aut quos iste natus incidunt omnis odit debitis officiis atque eaque dignissimos reiciendis
-          Lorem ipsum dolor, sit amet consectetur adipisicing elit. Esse dolorem quam perferendis cumque at molestias
+                ">Dedicated Information Technology graduate with a passion of learning and having practical experience
+          in system development, web design, and IT support. Developed technical skills through personal projects,
+          academic work, and real-world exposures. I am willing to
+          learn contentiously in a dynamic IT environment. <br> <br>
+          I have a solid foundation in programming particularly in Java, JavaScript, and Web Development Tools which has
+          strengthened my ability to approach challenges with logical thinking, creativity, and a continuous learning
+          mindset. I enjoy working with teams, sharing insights, and contributing to building solutions.
         </h2>
       </div>
       <div style="display: flex;
@@ -182,19 +200,19 @@
                   flex: 2;
                   margin-top: 20px;
                   gap: 10px;">
-        <a href="">
+        <a href="https://www.facebook.com/MARCKYBALABAPANGET" target="_blank">
           <img src="images/fb.png" style="width: 40px;
                                         height: 40px;" alt="">
         </a>
-        <a href="">
+        <a href="https://github.com/PauloMarcky?tab=overview&from=2026-02-01&to=2026-02-17" target="_blank">
           <img src="images/github.png" style="width: 40px;
                                         height: 40px;" alt="">
         </a>
-        <a href="">
+        <a href="https://www.instagram.com/marcky_balaba/" target="_blank">
           <img src="images/insta.png" style="width: 40px;
                                         height: 40px;" alt="">
         </a>
-        <a href="">
+        <a href="" target="_blank">
           <img src="images/tele.png" style="width: 40px;
                                         height: 40px;" alt="">
         </a>
