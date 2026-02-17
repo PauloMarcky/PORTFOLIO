@@ -1,9 +1,16 @@
-<html lang="en" style="transition: smooth;">
+<html lang="en">
 
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Hello There :]</title>
+  <style>
+    input:focus,
+    textarea:focus {
+      outline: none;
+      border-bottom: 2px solid #7030a0;
+    }
+  </style>
 </head>
 
 <body style="margin: 0;
@@ -122,7 +129,7 @@
   </header>
 
   <div style="
-              height: 550px;
+              height: 450px;
               width: 78em;
               border-radius: 30px;
               padding: 50px;
@@ -130,43 +137,31 @@
               padding-bottom: 30px;
               box-sizing: border-box;
               position: relative;
-              margin-top: 50px;
+              margin-top: 100px;
               display: grid;
-              grid-template-columns: 400px 1fr;
-              grid-template-rows: 1fr 430px;
+              grid-template-columns: 420px 630px;
+              grid-template-rows: 1fr;
               grid-template-areas: 
-                'title title'
-                'contact message'
                 'contact message';
-              gap: 0;
-              ">
-    <h1 style="grid-area: title;
-               margin: 0;
-               align-content: center;
-               text-align: center;
-               color: #ffffff;
-               font-family: 'Trebuchet MS';
-               font-size: 2.5em;
-               padding-bottom: 20px;">
-      GET IN TOUCH</h1>
+              justify-content: center;">
     <div style="grid-area: contact; 
-                background-color: #260044; 
+                background-color: #7030a0; 
                 border-radius: 40px 0 0 40px; 
-                border: 20px solid #ffffff;
+                border: 10px solid #ffffff;
                 align-content: center;
                 justify-items: left;">
       <h3 style="color: white;
-                 font-size: 1.5em;
-                 font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+                 font-size: 2em;
+                 font-family: 'Trebuchet MS';
                  padding-left: 30px;
                  margin-bottom: 0;
                  margin-top: 0;
                  font-weight: 500;">CONTACT INFORMATION</h3>
-      <p style="color: rgb(192, 5, 255);
+      <p style="color: #260044;
                 font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
                 padding-left: 30px;
                 margin-bottom: 40px;
-                font-size: 15px;
+                font-size: 13px;
                 font-weight: 100;
                 margin-top: 10px;">Please dont make unnecesarry contacts!</p>
       <div style="display: grid;
@@ -180,20 +175,20 @@
                   justify-items: left;
                   align-items: center">
         <div style="grid-area: phone-img;"><img src="images/white-phone.png" style="object-fit: cover;
-                                                                                    width: 20px;
-                                                                                    height: 20px;"></div>
+                                                                                    width: 23px;
+                                                                                    height: 23px;"></div>
         <div style="grid-area: phone;
                     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
                     color: #ffffff;">+63 948 9928 125</div>
         <div style="grid-area: email-img;"><img src="images/white-email.png" style="object-fit: cover;
-                                                                                    width: 20px;
-                                                                                    height: 20px;"></div>
+                                                                                    width: 23px;
+                                                                                    height: 23px;"></div>
         <div style="grid-area: email;
                     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
                     color: #ffffff;">paulobalaba5@gmail.com</div>
         <div style="grid-area: location-img;"><img src="images/white-location.png" style="object-fit: cover;
-                                                                                          width: 20px;
-                                                                                          height: 20px;"></div>
+                                                                                          width: 25px;
+                                                                                          height: 23px;"></div>
         <div style="grid-area: location;
                     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
                     color: #ffffff;">Purok 7, Bugallong Norte, Ramon Isabela</div>
@@ -201,11 +196,86 @@
     </div>
     <div style="grid-area: message; 
                 background-color: #ffffff; 
-                border-radius: 0 20px 20px 0;">
-      <div><input type="text"></div>
-      <div><input type="email"></div>
-      <div><input type="message"></div>
-      <div><button>Send Message</button></div>
+                border-radius: 0 20px 20px 0;
+                display: grid;
+                grid-template-columns: 50% 50%;
+                grid-template-rows: 60px 60px 150px 1fr;
+                grid-template-areas:
+                  'title title'
+                  'name email'
+                  'mess mess'
+                  'send send';
+                justify-items: center;
+                align-items: center;
+                padding-top: 20px;
+                padding-bottom: 20px;">
+      <div style="grid-area: title;">
+        <h3 style="margin: 5px;
+                   font-size: 2em;
+                   font-family: 'Trebuchet MS';
+                   font-weight: 500;
+                   color: #260044;">GET IN TOUCH</h3>
+        <p style="color: #260044;
+                  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+                  margin-bottom: 10px;
+                  margin-top: 0px;
+                  font-size: 13px;
+                  font-weight: 100;
+                  text-align: center;">Please follow the format below!</p>
+      </div>
+      <div style="grid-area: name;
+                  display: flex;
+                  flex-direction: column;
+                  padding-top: 20px;">
+        <p style="color: #260044;
+                  font-family: 'Segoe UI';
+                  font-size: .8em;
+                  margin: 0;">Name:</p>
+        <input style="width: 250px;
+                      height: 30px;
+                      border: none;
+                      font-size: .8em;
+                      font-weight: 100;
+                      border-bottom: 1px solid #a4a4a4;" type="text">
+      </div>
+      <div style="grid-area: email;
+                  display: flex;
+                  flex-direction: column;
+                  padding-top: 20px;">
+        <p style="color: #260044;
+                  font-family: 'Segoe UI';
+                  font-size: .8em;
+                  margin: 0;">Email:</p>
+        <input style="width: 250px;
+                      height: 30px;
+                      border: none;
+                      font-size: .8em;
+                      font-weight: 100;
+                      border-bottom: 1px solid #a4a4a4;" type="email">
+      </div>
+      <div style="grid-area: mess;
+                  padding-top: 20px;">
+        <p style="color: #260044;
+                  font-family: 'Segoe UI';
+                  font-size: .8em;
+                  margin-bottom: 10px;">Message</p>
+        <textarea style="width: 560px;
+                         height: 100px;
+                         resize: none;
+                         font-family: 'Segoe UI';
+                         font-size: .8em;
+                         border: none;
+                         border-bottom: 1px solid #a4a4a4;" placeholder="Type message here...."></textarea>
+      </div>
+      <div style="grid-area: send;">
+        <button style="width: 150px;
+                       height: 30px;
+                       background-color:#9b59d0;
+                       border: 1px solid rgb(93, 93, 93);
+                       border-radius: 5px;
+                       color: white;
+                       font-weight: bold;">Send Message</button>
+      </div>
     </div>
   </div>
 </body>
