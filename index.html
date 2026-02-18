@@ -31,7 +31,7 @@
 
     @keyframes pop-up {
       from {
-        transform: scale(10%)
+        transform: scale(50%)
       }
 
       to {
@@ -43,14 +43,14 @@
     .sub-intro,
     .view-project-btn {
       opacity: 0;
-      animation: fadeRight .8s ease-in forwards;
-      animation-delay: .40s;
+      animation: fadeRight 1s ease-out forwards;
+      animation-delay: .8s;
     }
 
     .profile {
       opacity: 0;
-      animation: fadeLeft .8s ease-in forwards;
-      animation-delay: 1s;
+      animation: fadeLeft 1s ease-out forwards;
+      animation-delay: 1.4s;
     }
 
     button {
@@ -63,7 +63,7 @@
     }
 
     .container {
-      animation: pop-up .5s ease-out;
+      animation: pop-up .6s ease-out;
     }
   </style>
 </head>

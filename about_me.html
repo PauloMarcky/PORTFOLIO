@@ -40,13 +40,26 @@
 
     .profile {
       opacity: 0;
-      animation: fadeRight 1s ease-out forwards;
+      animation: fadeRight .8s ease-out forwards;
+      animation-delay: .4s;
     }
 
     .about-text {
       opacity: 0;
-      animation: fadeLeft 1s ease-out forwards;
-      animation-delay: 1s;
+      animation: fadeLeft .8s ease-out forwards;
+      animation-delay: 1.2s;
+    }
+
+    #info {
+      opacity: 0;
+      animation: fadeLeft .8s ease-out forwards;
+      animation-delay: 1.6s;
+    }
+
+    #soc_med {
+      opacity: 0;
+      animation: fadeLeft .8s ease-out forwards;
+      animation-delay: 2s;
     }
   </style>
 </head>
@@ -150,7 +163,8 @@
               alt="contact-info-button"></button>
         </a>
         <p style="margin-top: 5px;
-                font: .8em 'Segoe UI'">Contacts</p>
+                font: .8em 'Segoe UI';
+                color: #000000; ">Contacts</p>
       </div>
       <div style="display: flex; flex-direction: column; align-items: center;">
         <a class="link" href="">
@@ -162,7 +176,8 @@
               alt="projects-button"></button>
         </a>
         <p style="margin-top: 5px;
-                font: .8em 'Segoe UI'
+                font: .8em 'Segoe UI';
+                color: #000000;
                 ">Projects</p>
       </div>
     </nav>
@@ -192,7 +207,7 @@
                   object-position: 20% 15%;
                   " src="images/profile.png" alt="">
     </div>
-    <div class="about-text" style="
+    <div style="
                 grid-area: about-me ;
                 border-radius: 20px;
                 display: flex;
@@ -201,7 +216,7 @@
                 margin-right: 50px;
                 margin-left: 10px;
                 ">
-      <div>
+      <div class="about-text">
         <h1 style="
                 text-align: left;
                 color: #ffffff;
@@ -212,7 +227,7 @@
                 font-weight: bold;">ABOUT ME
         </h1>
       </div>
-      <div>
+      <div class="about-text">
         <h2 style="
                 text-align: left;
                 color: #260044;
@@ -223,8 +238,8 @@
                 font-weight: bold;
                 ">Marcky Paulo Balaba (Pau-pau)
         </h2>
-      </div>
-      <div>
+      </div class="about-text">
+      <div id="info">
         <h2 style="
                 text-align: left;
                 color: #ffffff;
@@ -242,25 +257,25 @@
           mindset. I enjoy working with teams, sharing insights, and contributing to building solutions.
         </h2>
       </div>
-      <div style="display: flex;
+      <div id="soc_med" style="display: flex;
                   flex-direction: row;
                   flex: 2;
                   margin-top: 20px;
                   gap: 10px;">
         <a href="https://www.facebook.com/MARCKYBALABAPANGET" target="_blank">
-          <img src="images/fb.png" style="width: 40px;
+          <img src="images/fb_clear.png" style="width: 40px;
                                         height: 40px;" alt="">
         </a>
         <a href="https://github.com/PauloMarcky?tab=overview&from=2026-02-01&to=2026-02-17" target="_blank">
-          <img src="images/github.png" style="width: 40px;
+          <img src="images/github_clear.png" style="width: 40px;
                                         height: 40px;" alt="">
         </a>
         <a href="https://www.instagram.com/marcky_balaba/" target="_blank">
-          <img src="images/insta.png" style="width: 40px;
+          <img src="images/insta_clear.png" style="width: 40px;
                                         height: 40px;" alt="">
         </a>
         <a href="" target="_blank">
-          <img src="images/tele.png" style="width: 40px;
+          <img src="images/tele_clear.png" style="width: 40px;
                                         height: 40px;" alt="">
         </a>
       </div>

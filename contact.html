@@ -10,6 +10,37 @@
       outline: none;
       border-bottom: 2px solid #7030a0;
     }
+
+    button {
+      transition: ease-out .1s;
+    }
+
+    .link:hover .nav-btn {
+      background-color: #cdcdcd !important;
+      cursor: pointer;
+    }
+
+    .link:hover .nav-btn-main {
+      cursor: pointer;
+    }
+
+    @keyframes pop-up {
+      from {
+        opacity: 0;
+        transform: scale(50%)
+      }
+
+      to {
+        opacity: 1;
+        transform: scale(100%);
+      }
+    }
+
+    .container {
+      opacity: 0;
+      animation: pop-up .6s ease-out forwards;
+      animation-delay: .3s;
+    }
   </style>
 </head>
 
@@ -77,8 +108,8 @@
                 justify-items: center;
                 margin-top: 60px;">
       <div style="display: flex; flex-direction: column; align-items: center;">
-        <a href="index.html">
-          <button style="background-color: #f4f4f4;
+        <a class="link" href="index.html">
+          <button class="nav-btn" style="background-color: #f4f4f4;
                     width: 40px;
                     height: 40px;
                     border-radius: 20px;
@@ -86,11 +117,12 @@
               alt="home-button"></button>
         </a>
         <p style="margin-top: 5px;
-                font: .8em 'Segoe UI';">Home</p>
+                font: .8em 'Segoe UI';
+                color: black;">Home</p>
       </div>
       <div style="display: flex; flex-direction: column; align-items: center;">
-        <a href="about_me.html">
-          <button style="background-color: #f4f4f4;
+        <a class="link" href="about_me.html">
+          <button class="nav-btn" style="background-color: #f4f4f4;
                     width: 40px;
                     height: 40px;
                     border-radius: 20px;
@@ -99,11 +131,12 @@
         </a>
         <p style="margin-top: 5px;
                   font: .8em 'Segoe UI';
+                  color: black;
                 ">About me</p>
       </div>
       <div style="display: flex; flex-direction: column; align-items: center;">
-        <a href="contact.html">
-          <button style="background-color: #e794f17c;
+        <a class="link" href="contact.html">
+          <button class="nav-btn-main" style="background-color: #e794f17c;
                     width: 40px;
                     height:   40px;
                     border-radius: 20px;
@@ -115,20 +148,23 @@
                   color: #7030a0;">Contacts</p>
       </div>
       <div style="display: flex; flex-direction: column; align-items: center;">
-        <button style="background-color: #f4f4f4;
+        <a class="link" style="text-decoration: none;" href="">
+          <button class="nav-btn" style="background-color: #f4f4f4;
                     width: 40px;
                     height: 40px;
                     border-radius: 20px;
                     border: 0;"><img style="width: 20px; height: 20px;" src="images/icons8-project-48.png"
-            alt="projects-button"></button>
-        <p style="margin-top: 5px;
-                font: .8em 'Segoe UI'
+              alt="projects-button"></button>
+          <p style="margin-top: 5px;
+                font: .8em 'Segoe UI';
+                color: black;
                 ">Projects</p>
+        </a>
       </div>
     </nav>
   </header>
 
-  <div style="
+  <div class="container" style="
               height: 450px;
               width: 78em;
               border-radius: 30px;
@@ -224,14 +260,8 @@
                   text-align: center;">Please follow the format below!</p>
       </div>
       <div style="grid-area: name;
-                  display: flex;
-                  flex-direction: column;
-                  padding-top: 20px;">
-        <p style="color: #260044;
-                  font-family: 'Segoe UI';
-                  font-size: .8em;
-                  margin: 0;">Name:</p>
-        <input style="width: 250px;
+                  padding-top: 50px;">
+        <input placeholder="Enter Name" style="width: 250px;
                       height: 30px;
                       border: none;
                       font-size: .8em;
@@ -239,14 +269,8 @@
                       border-bottom: 1px solid #a4a4a4;" type="text">
       </div>
       <div style="grid-area: email;
-                  display: flex;
-                  flex-direction: column;
-                  padding-top: 20px;">
-        <p style="color: #260044;
-                  font-family: 'Segoe UI';
-                  font-size: .8em;
-                  margin: 0;">Email:</p>
-        <input style="width: 250px;
+                  padding-top: 50px;">
+        <input placeholder="Enter Email" style="width: 250px;
                       height: 30px;
                       border: none;
                       font-size: .8em;
@@ -255,10 +279,6 @@
       </div>
       <div style="grid-area: mess;
                   padding-top: 20px;">
-        <p style="color: #260044;
-                  font-family: 'Segoe UI';
-                  font-size: .8em;
-                  margin-bottom: 10px;">Message</p>
         <textarea style="width: 560px;
                          height: 100px;
                          resize: none;
@@ -268,13 +288,15 @@
                          border-bottom: 1px solid #a4a4a4;" placeholder="Type message here...."></textarea>
       </div>
       <div style="grid-area: send;">
-        <button style="width: 150px;
-                       height: 30px;
+        <button style="width: 200px;
+                       height: 50px;
                        background-color:#9b59d0;
-                       border: 1px solid rgb(93, 93, 93);
+                       border: 1px solid rgb(255, 255, 255);
                        border-radius: 5px;
                        color: white;
-                       font-weight: bold;">Send Message</button>
+                       font-weight: 400;
+                       font-family: 'Trebuchet MS';
+                       font-size: 1.3em;">Send Message</button>
       </div>
     </div>
   </div>
