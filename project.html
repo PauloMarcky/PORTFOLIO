@@ -182,68 +182,135 @@
       </div>
     </nav>
   </header>
-  <div class="container" style="
-              background-color: hsla(288, 71%, 89%, 0.463);
-              height: 550px;
+  <div style="height: 550px;
               width: 78em;
               border-radius: 30px;
-              padding: 50px;
+              padding-right: 50px;
+              padding-left: 50px;
+              padding-bottom: 30px;
+              padding-top: 30px;
               box-sizing: border-box;
-              border: 5px solid white;
               position: relative;
               display: grid;
-              grid-template-columns: 700px 20em ;
-              grid-template-rows: 250px 90px 100px;
+              grid-template-columns: 1fr 400px;
+              grid-template-rows: 1fr;
               grid-template-areas:
-                'name profile-pic'
-                'expertise profile-pic'
-                'view-projects profile-pic';
+                'pjct mastery'
+                'pjct mastery';
               align-items: center;
               justify-content: center;
               column-gap: 0px;
               margin-top: 50px;
+              background-color: hsla(288, 71%, 89%, 0.463);
 ">
-    <div class="intro" style="grid-area: name;
-                padding: 0;
-                margin: 0;">
-      <h1 style=" 
-                color: rgb(255, 255, 255);
-                font-size: 5em;
-                font-family: 'Trebuchet MS' ; 
-                margin: 0; 
+    <div style="grid-area: pjct;
+                display: flex;
+                flex-shrink: 10px;
+                flex-direction: row;
+                flex-wrap: wrap;
+                column-gap: 20px;
+                row-gap: 20px;
+                justify-content: center;">
+      <div style="flex:auto;
+                  width: 300px;
+                  height: 130px;
+                  background-color: rgba(255, 255, 255, 0.539) ;
+                  border-radius: 10px;
+                  ">Calculator</div>
+      <div style="flex: auto;
+                  width: 300px;
+                  height: 130px;
+                  background-color: rgba(255, 255, 255, 0.539) ;
+                  border-radius: 10px;
+                  ">Guess Number</div>
+      <div style="flex: auto;
+                  width: 300px;
+                  height: 130px;
+                  background-color: rgba(255, 255, 255, 0.539) ;
+                  border-radius: 10px;
+                  ">Task Manager</div>
+      <div style="flex: auto;
+                  width: 300px;
+                  height: 130px;
+                  background-color: rgba(255, 255, 255, 0.539) ;
+                  border-radius: 10px;
+                  ">Prayer Book</div>
+      <div style="flex: auto;
+                  width: 300px;
+                  height: 130px;
+                  background-color: rgba(255, 255, 255, 0.539) ;
+                  border-radius: 10px;
+                  ">Tuition Manager System</div>
+      <div style="flex: auto;
+                  width: 300px;
+                  height: 130px;
+                  background-color: rgba(255, 255, 255, 0.539) ;
+                  border-radius: 10px;
+                  ">Fitness Website</div>
+    </div>
+    <div style="grid-area: mastery;
+                background-color:#7030a0;
+                margin-left: 30px;
+                height: 490;
+                padding: 20px;
+                box-sizing: border-box;
+                border-radius: 10px;
+                display: flex;
+                flex-direction: column;
+                row-gap: 20px;
                 align-items: center;
-               "> Hello, Im Marcky <br> Paulo Balaba</h1>
-    </div>
-    <div class="sub-intro" style="grid-area: expertise;
+                justify-content: center;
                 ">
-      <h4 style="
-               color: rgb(24, 24, 24);
-               font-size: 2em;
-               font-family: 'Arial';
-               text-align: left;
-               margin: 0%;">UI/UX Designer & Full Stack Developer
-      </h4>
-    </div>
-    <div class="view-project-btn" style="grid-area: view-projects;
-                justify-self: center  ;
-                ">
-      <button style=" 
-                      width: 220px;
-                      height: 50px;
-                      margin: 0;
-                      border-radius: 18px;
-                      border: none;
-                      background-color: #7030a0;
-                      color: white;
-                      font-size: 1em;
-                      font-family:'Segoe UI';
-                      border: 2px solid  rgb(248, 176, 255)
-                      ">
-        <b>View My Projects</b></button>
-    </div>
-    <div style="grid-area: profile-pic;">
-      <img class="profile" src="images/profile.png" alt="Profile Picture"
-        style="width: 100%; height: 100%; object-fit: cover; border-radius: 30px; object-position: 50% 15%;">
+      <div>MASTERY LEVEL</div>
+      <div style="display: flex;
+                  flex-direction: row;
+                  column-gap: 20px;">
+        <div style="width: 60px;"><label for="file-progress">HTML </label></div>
+        <div><progress value="70" max="100"> 70% </progress></div>
+      </div>
+      <div style="display: flex;
+                  flex-direction: row;
+                  column-gap: 20px;
+                  justify-content: stretch;">
+        <div style="width: 60px;"><label for="file-progress">CSS </label></div>
+        <div><progress value="70" max="100"> 70% </progress></div>
+      </div>
+      <div style="display: flex;
+                  flex-direction: row;
+                  column-gap: 20px;
+                  justify-content: stretch;">
+        <div style="width: 60px;"><label for="file-progress">JavaScript </label></div>
+        <div><progress value="70" max="100"> 70% </progress></div>
+      </div>
+      <div style="display: flex;
+                  flex-direction: row;
+                  column-gap: 20px;
+                  justify-content: stretch;">
+        <div style="width: 60px;"><label for="file-progress">JAVA </label></div>
+        <div><progress value="70" max="100"> 70% </progress></div>
+      </div>
+      <div style="display: flex;
+                  flex-direction: row;
+                  column-gap: 20px;
+                  justify-content: stretch;">
+        <div style="width: 60px;"><label for="file-progress">Python </label></div>
+        <div><progress value="70" max="100"> 70% </progress></div>
+      </div>
+      <div style="display: flex;
+                  flex-direction: row;
+                  column-gap: 20px;
+                  justify-content: stretch;">
+        <div style="width: 60px;"><label for="file-progress">C++ </label></div>
+        <div><progress value="70" max="100"> 70% </progress></div>
+      </div>
+      <div style="display: flex;
+                  flex-direction: row;
+                  column-gap: 20px;
+                  justify-content: stretch;">
+        <div style="width: 60px;"><label for="file-progress">MySql </label></div>
+        <div><progress value="70" max="100"> 70% </progress></div>
+      </div>
+
     </div>
   </div>
 </body>
