@@ -51,6 +51,18 @@
       background-color: #cdcdcd !important;
       cursor: pointer;
     }
+
+    button:hover {
+      cursor: pointer;
+    }
+
+    .container:hover .info-proj {
+      right: 0px !important;
+    }
+
+    .container:hover .title-proj {
+      left: 0px !important;
+    }
   </style>
 </head>
 
@@ -118,7 +130,7 @@
                 margin-top: 60px;">
       <div style="display: flex; flex-direction: column; align-items: center;">
         <a class="link" href="index.html">
-          <button style="background-color: #f4f4f4;
+          <button class="nav-btn" style="background-color: #f4f4f4;
                     width: 40px;
                     height: 40px;
                     border-radius: 20px;
@@ -127,7 +139,7 @@
         </a>
         <p style="margin-top: 5px;
                 font: .8em 'Segoe UI';
-                color: #7030a0;">Home</p>
+                color: #000000;">Home</p>
       </div>
       <div style="display: flex; flex-direction: column; align-items: center;">
         <a class="link" href="about_me.html">
@@ -155,7 +167,7 @@
       </div>
       <div style="display: flex; flex-direction: column; align-items: center;">
         <a class="link" href="project.html">
-          <button class="nav-btn" style="background-color: #e794f17c;
+          <button style="background-color: #e794f17c;
                     width: 40px;
                     height: 40px;
                     border-radius: 20px;
@@ -163,7 +175,8 @@
               src="images/icons8-project-48.png" alt="projects-button"></button>
         </a>
         <p style="margin-top: 5px;
-                font: .8em 'Segoe UI'
+                font: .8em 'Segoe UI';
+                color: #7030a0;
                 ">Projects</p>
       </div>
     </nav>
@@ -187,81 +200,344 @@
               justify-content: center;
               column-gap: 0px;
               margin-top: 50px;
-              background-color: hsla(288, 71%, 89%, 0.463);;
+              background-color: hsla(288, 71%, 89%, 0);
 ">
     <div class="proj-container" style="grid-area: pjct;
                 display: flex;
                 flex-direction: column;
-                row-gap: 30px;
+                row-gap: 15px;
                 justify-content: flex-start;
-                overflow-y: scroll;
-                height: 100%;">
-      <div style="flex-shrink: 0;
+                overflow: scroll;
+                height: 100%;
+                padding: 20px;
+                box-sizing: border-box;
+                border: 2px solid white;
+                border-radius: 20px;
+                background-color: white;">
+      <div class="container" style="flex-shrink: 0;
                   width: 100%;
                   max-width: 100%;
-                  height: 180px;
-                  background-color: rgba(255, 255, 255, 0.539) ;
+                  height: 185px;
+                  background-color: #9b59d0c2 ;
                   border-radius: 10px;
-                  display: flex;
-                  justify-content: center;
-                  align-items: center;">
-        <h2 style="font-family: 'Trebuchet MS'; color: white;">CALCULATOR</h2>
-      </div>
-      <div style="flex-shrink: 0;
-                  width: 100%;
-                  max-width: 100%;
-                  height: 180px;
-                  background-color: rgba(255, 255, 255, 0.539) ;
-                  border-radius: 10px;
+                  box-sizing: border-box;
                   display: flex;
                   justify-content: center;
                   align-items: center;
+                  position: relative;
+                  overflow-x: hidden;
+                  border: 2px solid #7030a0;
+                  box-shadow: 0 0 10px;
                   ">
-        <h2 style="font-family: 'Trebuchet MS'; color: white;">GUESS NUMBER GAME</h2>
+        <div class="title-proj"
+          style="font-family: 'Trebuchet MS'; color: white; text-align: center; color: #ffffff; position: absolute; margin: 0; width: 200px; height: 180px; left: 250px; transition: left .3s ease-in-out; display: flex; justify-content: center; align-items: center;">
+          <img style="width: 150px; height: 150px;" src="images/calculator-project.png" alt="">
+        </div>
+        <div class="info-proj" style="width: 510px;
+                                      height: 150px;
+                                      background-color: #d4a0ff00;
+                                      border-radius: 10px 0px 0px 10px;
+                                      position: absolute;
+                                      right: -510px;
+                                      transition: right .3s ease-in-out;
+                                      display: flex;
+                                      flex-direction: column;">
+          <div style="padding: 20px;
+                      padding-bottom: 10px;
+                      padding-top: 20px;
+                      height: 20px;
+                      box-sizing: border-box;">
+            <p style="margin: 0; font-family: Arial; font-size: 1.5em;">CALCULATORICISM</p>
+          </div>
+          <div style="padding: 20px;
+                      padding-bottom: 10px;
+                      padding-top: 30px;
+                      height: 100px;
+                      box-sizing: border-box;">
+            <p style="margin: 0; font-family: Arial; font-size: .9em;">The project is a basic calculator with different
+              basic mathemathical operations, following the EMDAS heirarchy of operation.</p>
+          </div>
+          <div style="display: flex;
+                      gap: 10px;
+                      padding-left: 20px;
+                      height: 50px;
+                      justify-content: left;
+                      align-items: center;
+                      padding-bottom: 20px;">
+            <button
+              style="height: 40px; width: 120px; background-color: rgba(116, 255, 116, 0); background-color: rgb(97, 255, 97); border-radius: 15px; border: none; ">
+              👁
+              VIEW CODE</button>
+            <button
+              style="height: 40px; width: 110px; background-color: rgba(116, 255, 116, 0); background-color: rgb(255, 97, 97); border-radius: 15px; border: none; ">
+              ▶︎ LIVE VIEW</button>
+          </div>
+        </div>
       </div>
-      <div style="flex-shrink: 0;
+      <div class="container" style="flex-shrink: 0;
                   width: 100%;
                   max-width: 100%;
-                  height: 180px;
-                  background-color: rgba(255, 255, 255, 0.539) ;
+                  height: 185px;
+                  background-color: #9b59d0c2 ;
                   border-radius: 10px;
+                  box-sizing: border-box;
                   display: flex;
                   justify-content: center;
-                  align-items: center;">
-        <h2 style="font-family: 'Trebuchet MS'; color: white;">TASK MANAGER</h2>
+                  align-items: center;
+                  position: relative;
+                  overflow-x: hidden;
+                  border: 2px solid #7030a0;
+                  box-shadow: 0 0 10px;
+                  ">
+        <h2 class="title-proj"
+          style="font-family: 'Trebuchet MS'; color: white; text-align: center; color: #ffffff; position: absolute; margin: 0; width: 200px; height: 180px; left: 250px; transition: left .3s ease-in-out; display: flex; justify-content: center; align-items: center;">
+          CALCULATOR <br>
+          PROJECT</h2>
+        <div class="info-proj" style="width: 510px;
+                                      height: 150px;
+                                      background-color: #9b59d000;
+                                      border-radius: 10px 0px 0px 10px;
+                                      position: absolute;
+                                      right: -510px;
+                                      transition: right .3s ease-in-out;
+                                      display: flex;
+                                      flex-direction: column;">
+          <div style="padding: 20px;
+                      padding-bottom: 10px;
+                      padding-top: 30px;
+                      height: 100px;
+                      box-sizing: border-box;">
+            <p style="margin: 0; font-family: Arial; font-size: .9em;">The project is a basic calculator with different
+              basic mathemathical operations, following the EMDAS heirarchy of operation.</p>
+          </div>
+          <div style="display: flex;
+                      gap: 10px;
+                      padding-left: 20px;
+                      height: 50px;
+                      justify-content: left;
+                      align-items: center;
+                      padding-bottom: 20px;">
+            <button
+              style="height: 40px; width: 120px; background-color: rgba(116, 255, 116, 0); background-color: rgb(97, 255, 97); border-radius: 15px; border: none; ">
+              👁
+              VIEW CODE</button>
+            <button
+              style="height: 40px; width: 110px; background-color: rgba(116, 255, 116, 0); background-color: rgb(255, 97, 97); border-radius: 15px; border: none; ">
+              ▶︎ LIVE VIEW</button>
+          </div>
+        </div>
       </div>
-      <div style="flex-shrink: 0;
+      <div class="container" style="flex-shrink: 0;
                   width: 100%;
                   max-width: 100%;
-                  height: 180px;
-                  background-color: rgba(255, 255, 255, 0.539) ;
+                  height: 185px;
+                  background-color: #9b59d0b5 ;
                   border-radius: 10px;
+                  box-sizing: border-box;
                   display: flex;
                   justify-content: center;
-                  align-items: center;">
-        <h2 style="font-family: 'Trebuchet MS'; color: white;">PRAYER BOOK</h2>
+                  align-items: center;
+                  position: relative;
+                  overflow-x: hidden;
+                  border: 2px solid #7030a0;
+                  box-shadow: 0 0 10px;
+                  ">
+        <h2 class="title-proj"
+          style="font-family: 'Trebuchet MS'; color: white; text-align: center; color: #ffffff; position: absolute; margin: 0; width: 200px; height: 180px; left: 250px; transition: left .3s ease-in-out; display: flex; justify-content: center; align-items: center;">
+          CALCULATOR <br>
+          PROJECT</h2>
+        <div class="info-proj" style="width: 510px;
+                                      height: 150px;
+                                      background-color: #9b59d000;
+                                      border-radius: 10px 0px 0px 10px;
+                                      position: absolute;
+                                      right: -510px;
+                                      transition: right .3s ease-in-out;
+                                      display: flex;
+                                      flex-direction: column;">
+          <div style="padding: 20px;
+                      padding-bottom: 10px;
+                      padding-top: 30px;
+                      height: 100px;
+                      box-sizing: border-box;">
+            <p style="margin: 0; font-family: Arial; font-size: .9em;">The project is a basic calculator with different
+              basic mathemathical operations, following the EMDAS heirarchy of operation.</p>
+          </div>
+          <div style="display: flex;
+                      gap: 10px;
+                      padding-left: 20px;
+                      height: 50px;
+                      justify-content: left;
+                      align-items: center;
+                      padding-bottom: 20px;">
+            <button
+              style="height: 40px; width: 120px; background-color: rgba(116, 255, 116, 0); background-color: rgb(97, 255, 97); border-radius: 15px; border: none; ">
+              👁
+              VIEW CODE</button>
+            <button
+              style="height: 40px; width: 110px; background-color: rgba(116, 255, 116, 0); background-color: rgb(255, 97, 97); border-radius: 15px; border: none; ">
+              ▶︎ LIVE VIEW</button>
+          </div>
+        </div>
       </div>
-      <div style="flex-shrink: 0;
+      <div class="container" style="flex-shrink: 0;
                   width: 100%;
                   max-width: 100%;
-                  height: 180px;
-                  background-color: rgba(255, 255, 255, 0.539) ;
+                  height: 185px;
+                  background-color: rgba(255, 255, 255, 0) ;
                   border-radius: 10px;
+                  box-sizing: border-box;
                   display: flex;
                   justify-content: center;
-                  align-items: center;">
-        <h2 style="font-family: 'Trebuchet MS'; color: white;">TUITION MANAGER SYSTEM</h2>
+                  align-items: center;
+                  position: relative;
+                  overflow-x: hidden;
+                  border: 2px solid #7030a0;
+                  box-shadow: 0 0 10px;
+                  ">
+        <h2 class="title-proj"
+          style="font-family: 'Trebuchet MS'; color: white; text-align: center; color: #ffffff; position: absolute; margin: 0; width: 200px; height: 180px; left: 250px; transition: left .3s ease-in-out; display: flex; justify-content: center; align-items: center;">
+          CALCULATOR <br>
+          PROJECT</h2>
+        <div class="info-proj" style="width: 510px;
+                                      height: 150px;
+                                      background-color: #9b59d000;
+                                      border-radius: 10px 0px 0px 10px;
+                                      position: absolute;
+                                      right: -510px;
+                                      transition: right .3s ease-in-out;
+                                      display: flex;
+                                      flex-direction: column;">
+          <div style="padding: 20px;
+                      padding-bottom: 10px;
+                      padding-top: 30px;
+                      height: 100px;
+                      box-sizing: border-box;">
+            <p style="margin: 0; font-family: Arial; font-size: .9em;">The project is a basic calculator with different
+              basic mathemathical operations, following the EMDAS heirarchy of operation.</p>
+          </div>
+          <div style="display: flex;
+                      gap: 10px;
+                      padding-left: 20px;
+                      height: 50px;
+                      justify-content: left;
+                      align-items: center;
+                      padding-bottom: 20px;">
+            <button
+              style="height: 40px; width: 120px; background-color: rgba(116, 255, 116, 0); background-color: rgb(97, 255, 97); border-radius: 15px; border: none; ">
+              👁
+              VIEW CODE</button>
+            <button
+              style="height: 40px; width: 110px; background-color: rgba(116, 255, 116, 0); background-color: rgb(255, 97, 97); border-radius: 15px; border: none; ">
+              ▶︎ LIVE VIEW</button>
+          </div>
+        </div>
       </div>
-      <div style="flex-shrink: 0;
+      <div class="container" style="flex-shrink: 0;
                   width: 100%;
                   max-width: 100%;
-                  height: 180px;
-                  background-color: rgba(255, 255, 255, 0.539) ;
+                  height: 185px;
+                  background-color: rgba(255, 255, 255, 0) ;
                   border-radius: 10px;
+                  box-sizing: border-box;
                   display: flex;
                   justify-content: center;
-                  align-items: center;">
-        <h2 style="font-family: 'Trebuchet MS'; color: white;">FITNESS WEBSITE</h2>
+                  align-items: center;
+                  position: relative;
+                  overflow-x: hidden;
+                  border: 2px solid #7030a0;
+                  box-shadow: 0 0 10px;
+                  ">
+        <h2 class="title-proj"
+          style="font-family: 'Trebuchet MS'; color: white; text-align: center; color: #ffffff; position: absolute; margin: 0; width: 200px; height: 180px; left: 250px; transition: left .3s ease-in-out; display: flex; justify-content: center; align-items: center;">
+          CALCULATOR <br>
+          PROJECT</h2>
+        <div class="info-proj" style="width: 510px;
+                                      height: 150px;
+                                      background-color: #9b59d000;
+                                      border-radius: 10px 0px 0px 10px;
+                                      position: absolute;
+                                      right: -510px;
+                                      transition: right .3s ease-in-out;
+                                      display: flex;
+                                      flex-direction: column;">
+          <div style="padding: 20px;
+                      padding-bottom: 10px;
+                      padding-top: 30px;
+                      height: 100px;
+                      box-sizing: border-box;">
+            <p style="margin: 0; font-family: Arial; font-size: .9em;">The project is a basic calculator with different
+              basic mathemathical operations, following the EMDAS heirarchy of operation.</p>
+          </div>
+          <div style="display: flex;
+                      gap: 10px;
+                      padding-left: 20px;
+                      height: 50px;
+                      justify-content: left;
+                      align-items: center;
+                      padding-bottom: 20px;">
+            <button
+              style="height: 40px; width: 120px; background-color: rgba(116, 255, 116, 0); background-color: rgb(97, 255, 97); border-radius: 15px; border: none; ">
+              👁
+              VIEW CODE</button>
+            <button
+              style="height: 40px; width: 110px; background-color: rgba(116, 255, 116, 0); background-color: rgb(255, 97, 97); border-radius: 15px; border: none; ">
+              ▶︎ LIVE VIEW</button>
+          </div>
+        </div>
+      </div>
+      <div class="container" style="flex-shrink: 0;
+                  width: 100%;
+                  max-width: 100%;
+                  height: 185px;
+                  background-color: rgba(255, 255, 255, 0) ;
+                  border-radius: 10px;
+                  box-sizing: border-box;
+                  display: flex;
+                  justify-content: center;
+                  align-items: center;
+                  position: relative;
+                  overflow-x: hidden;
+                  border: 2px solid #7030a0;
+                  box-shadow: 0 0 10px;
+                  ">
+        <h2 class="title-proj"
+          style="font-family: 'Trebuchet MS'; color: white; text-align: center; color: #ffffff; position: absolute; margin: 0; width: 200px; height: 180px; left: 250px; transition: left .3s ease-in-out; display: flex; justify-content: center; align-items: center;">
+          CALCULATOR <br>
+          PROJECT</h2>
+        <div class="info-proj" style="width: 510px;
+                                      height: 150px;
+                                      background-color: #9b59d000;
+                                      border-radius: 10px 0px 0px 10px;
+                                      position: absolute;
+                                      right: -510px;
+                                      transition: right .3s ease-in-out;
+                                      display: flex;
+                                      flex-direction: column;">
+          <div style="padding: 20px;
+                      padding-bottom: 10px;
+                      padding-top: 30px;
+                      height: 100px;
+                      box-sizing: border-box;">
+            <p style="margin: 0; font-family: Arial; font-size: .9em;">The project is a basic calculator with different
+              basic mathemathical operations, following the EMDAS heirarchy of operation.</p>
+          </div>
+          <div style="display: flex;
+                      gap: 10px;
+                      padding-left: 20px;
+                      height: 50px;
+                      justify-content: left;
+                      align-items: center;
+                      padding-bottom: 20px;">
+            <button
+              style="height: 40px; width: 120px; background-color: rgba(116, 255, 116, 0); background-color: rgb(97, 255, 97); border-radius: 15px; border: none; ">
+              👁
+              VIEW CODE</button>
+            <button
+              style="height: 40px; width: 110px; background-color: rgba(116, 255, 116, 0); background-color: rgb(255, 97, 97); border-radius: 15px; border: none; ">
+              ▶︎ LIVE VIEW</button>
+          </div>
+        </div>
       </div>
     </div>
     <div style="grid-area: mastery;
