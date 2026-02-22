@@ -57,11 +57,11 @@
     }
 
     .container:hover .info-proj {
-      right: 0px !important;
+      bottom: 0px !important;
     }
 
-    .container:hover .title-proj {
-      left: 0px !important;
+    .container:hover .title-proj img {
+      filter: blur(7px) !important;
     }
   </style>
 </head>
@@ -205,7 +205,7 @@
     <div class="proj-container" style="grid-area: pjct;
                 display: flex;
                 flex-direction: column;
-                row-gap: 15px;
+                row-gap: 50px;
                 justify-content: flex-start;
                 overflow: scroll;
                 height: 100%;
@@ -213,7 +213,7 @@
                 box-sizing: border-box;
                 border: 2px solid white;
                 border-radius: 20px;
-                background-color: white;">
+                background-color: rgba(255, 255, 255, 0.378);">
       <div class="container" style="flex-shrink: 0;
                   width: 100%;
                   max-width: 100%;
@@ -225,37 +225,43 @@
                   justify-content: center;
                   align-items: center;
                   position: relative;
-                  overflow-x: hidden;
+                  overflow-y: hidden;
                   border: 2px solid #7030a0;
                   box-shadow: 0 0 10px;
                   ">
         <div class="title-proj"
-          style="font-family: 'Trebuchet MS'; color: white; text-align: center; color: #ffffff; position: absolute; margin: 0; width: 200px; height: 180px; left: 250px; transition: left .3s ease-in-out; display: flex; justify-content: center; align-items: center;">
-          <img style="width: 150px; height: 150px;" src="images/calculator-project.png" alt="">
+          style="position: absolute; margin: 0; width: 100%; height: 100%; transition: left .3s ease-in-out; display: flex; justify-content: center; align-items: center;">
+          <img style="width: 100%; height: 100%; transition: filter .2s ease-in-out;" src="images/calcu-project.png"
+            alt="">
         </div>
-        <div class="info-proj" style="width: 510px;
-                                      height: 150px;
-                                      background-color: #d4a0ff00;
-                                      border-radius: 10px 0px 0px 10px;
+        <div class="info-proj" style="width: 100%;
+                                      height: 160px;
+                                      background-color: #ffffffa7;
+                                      border-radius: 10px;
                                       position: absolute;
-                                      right: -510px;
-                                      transition: right .3s ease-in-out;
+                                      bottom: -600px;
+                                      transition: bottom .3s ease-in-out;
                                       display: flex;
-                                      flex-direction: column;">
+                                      flex-direction: column;
+                                      justify-content: center;
+                                      align-items: center;">
           <div style="padding: 20px;
                       padding-bottom: 10px;
                       padding-top: 20px;
                       height: 20px;
                       box-sizing: border-box;">
-            <p style="margin: 0; font-family: Arial; font-size: 1.5em;">CALCULATORICISM</p>
+            <p style="margin: 0; font-family: 'Segoe UI'; font-size: 1.5em; font-weight: bold; color: #7030a0;">
+              CALCULATOR</p>
           </div>
           <div style="padding: 20px;
                       padding-bottom: 10px;
                       padding-top: 30px;
                       height: 100px;
                       box-sizing: border-box;">
-            <p style="margin: 0; font-family: Arial; font-size: .9em;">The project is a basic calculator with different
-              basic mathemathical operations, following the EMDAS heirarchy of operation.</p>
+            <p style="margin: 0; font-family: Arial; font-size: .9em; text-align: center;">The project is a basic
+              calculator with the
+              basic mathemathical operations, following the EMDAS heirarchy of operation. It is built using HTML, CSS
+              and Javascript.</p>
           </div>
           <div style="display: flex;
                       gap: 10px;
@@ -285,30 +291,44 @@
                   justify-content: center;
                   align-items: center;
                   position: relative;
-                  overflow-x: hidden;
+                  overflow-y: hidden;
                   border: 2px solid #7030a0;
                   box-shadow: 0 0 10px;
                   ">
-        <h2 class="title-proj"
-          style="font-family: 'Trebuchet MS'; color: white; text-align: center; color: #ffffff; position: absolute; margin: 0; width: 200px; height: 180px; left: 250px; transition: left .3s ease-in-out; display: flex; justify-content: center; align-items: center;">
-          CALCULATOR <br>
-          PROJECT</h2>
-        <div class="info-proj" style="width: 510px;
-                                      height: 150px;
-                                      background-color: #9b59d000;
-                                      border-radius: 10px 0px 0px 10px;
+        <div class="title-proj"
+          style="position: absolute; margin: 0; width: 100%; height: 100%; transition: left .3s ease-in-out; display: flex; justify-content: center; align-items: center;">
+          <img style="width: 100%; height: 100%; transition: filter .2s ease-in-out;"
+            src="images/to-do-list-project.png" alt="">
+        </div>
+        <div class="info-proj" style="width: 100%;
+                                      height: 160px;
+                                      background-color: #ffffffa7;
+                                      border-radius: 10px;
                                       position: absolute;
-                                      right: -510px;
-                                      transition: right .3s ease-in-out;
+                                      bottom: -600px;
+                                      transition: bottom .3s ease-in-out;
                                       display: flex;
-                                      flex-direction: column;">
+                                      flex-direction: column;
+                                      justify-content: center;
+                                      align-items: center;">
+          <div style="padding: 20px;
+                      padding-bottom: 10px;
+                      padding-top: 20px;
+                      height: 20px;
+                      box-sizing: border-box;">
+            <p style="margin: 0; font-family: 'Segoe UI'; font-size: 1.5em; font-weight: bold; color: #7030a0;">
+              TO DO LIST</p>
+          </div>
           <div style="padding: 20px;
                       padding-bottom: 10px;
                       padding-top: 30px;
                       height: 100px;
                       box-sizing: border-box;">
-            <p style="margin: 0; font-family: Arial; font-size: .9em;">The project is a basic calculator with different
-              basic mathemathical operations, following the EMDAS heirarchy of operation.</p>
+            <p style="margin: 0; font-family: Arial; font-size: .9em; text-align: center;">This project is built for the
+              purpose of enabbling users to
+              enter a list of task infinitely with a function to set a date and delete task. It is built using HTML,
+              CSS
+              and Javascript.</p>
           </div>
           <div style="display: flex;
                       gap: 10px;
@@ -331,37 +351,51 @@
                   width: 100%;
                   max-width: 100%;
                   height: 185px;
-                  background-color: #9b59d0b5 ;
+                  background-color: #9b59d0c2 ;
                   border-radius: 10px;
                   box-sizing: border-box;
                   display: flex;
                   justify-content: center;
                   align-items: center;
                   position: relative;
-                  overflow-x: hidden;
+                  overflow-y: hidden;
                   border: 2px solid #7030a0;
                   box-shadow: 0 0 10px;
                   ">
-        <h2 class="title-proj"
-          style="font-family: 'Trebuchet MS'; color: white; text-align: center; color: #ffffff; position: absolute; margin: 0; width: 200px; height: 180px; left: 250px; transition: left .3s ease-in-out; display: flex; justify-content: center; align-items: center;">
-          CALCULATOR <br>
-          PROJECT</h2>
-        <div class="info-proj" style="width: 510px;
-                                      height: 150px;
-                                      background-color: #9b59d000;
-                                      border-radius: 10px 0px 0px 10px;
+        <div class="title-proj"
+          style="position: absolute; margin: 0; width: 100%; height: 100%; transition: left .3s ease-in-out; display: flex; justify-content: center; align-items: center;">
+          <img style="width: 100%; height: 100%; transition: filter .2s ease-in-out;"
+            src="images/fitness-web-project.png" alt="">
+        </div>
+        <div class="info-proj" style="width: 100%;
+                                      height: 160px;
+                                      background-color: #ffffffa7;
+                                      border-radius: 10px;
                                       position: absolute;
-                                      right: -510px;
-                                      transition: right .3s ease-in-out;
+                                      bottom: -600px;
+                                      transition: bottom .3s ease-in-out;
                                       display: flex;
-                                      flex-direction: column;">
+                                      flex-direction: column;
+                                      justify-content: center;
+                                      align-items: center;">
+          <div style="padding: 20px;
+                      padding-bottom: 10px;
+                      padding-top: 20px;
+                      height: 20px;
+                      box-sizing: border-box;">
+            <p style="margin: 0; font-family: 'Segoe UI'; font-size: 1.5em; font-weight: bold; color: #7030a0;">
+              FITNESS WEBSITE</p>
+          </div>
           <div style="padding: 20px;
                       padding-bottom: 10px;
                       padding-top: 30px;
                       height: 100px;
                       box-sizing: border-box;">
-            <p style="margin: 0; font-family: Arial; font-size: .9em;">The project is a basic calculator with different
-              basic mathemathical operations, following the EMDAS heirarchy of operation.</p>
+            <p style="margin: 0; font-family: Arial; font-size: .9em; text-align: center;">This project is built for the
+              purpose of enabbling users to
+              enter a list of task infinitely with a function to set a date and delete task. It is built using HTML,
+              CSS
+              and Javascript.</p>
           </div>
           <div style="display: flex;
                       gap: 10px;
@@ -384,37 +418,51 @@
                   width: 100%;
                   max-width: 100%;
                   height: 185px;
-                  background-color: rgba(255, 255, 255, 0) ;
+                  background-color: #9b59d0c2 ;
                   border-radius: 10px;
                   box-sizing: border-box;
                   display: flex;
                   justify-content: center;
                   align-items: center;
                   position: relative;
-                  overflow-x: hidden;
+                  overflow-y: hidden;
                   border: 2px solid #7030a0;
                   box-shadow: 0 0 10px;
                   ">
-        <h2 class="title-proj"
-          style="font-family: 'Trebuchet MS'; color: white; text-align: center; color: #ffffff; position: absolute; margin: 0; width: 200px; height: 180px; left: 250px; transition: left .3s ease-in-out; display: flex; justify-content: center; align-items: center;">
-          CALCULATOR <br>
-          PROJECT</h2>
-        <div class="info-proj" style="width: 510px;
-                                      height: 150px;
-                                      background-color: #9b59d000;
-                                      border-radius: 10px 0px 0px 10px;
+        <div class="title-proj"
+          style="position: absolute; margin: 0; width: 100%; height: 100%; transition: left .3s ease-in-out; display: flex; justify-content: center; align-items: center;">
+          <img style="width: 100%; height: 100%; transition: filter .2s ease-in-out;" src="images/guess-number-game.png"
+            alt="">
+        </div>
+        <div class="info-proj" style="width: 100%;
+                                      height: 160px;
+                                      background-color: #ffffffa7;
+                                      border-radius: 10px;
                                       position: absolute;
-                                      right: -510px;
-                                      transition: right .3s ease-in-out;
+                                      bottom: -600px;
+                                      transition: bottom .3s ease-in-out;
                                       display: flex;
-                                      flex-direction: column;">
+                                      flex-direction: column;
+                                      justify-content: center;
+                                      align-items: center;">
+          <div style="padding: 20px;
+                      padding-bottom: 10px;
+                      padding-top: 20px;
+                      height: 20px;
+                      box-sizing: border-box;">
+            <p style="margin: 0; font-family: 'Segoe UI'; font-size: 1.5em; font-weight: bold; color: #7030a0;">
+              GUESSING GAME</p>
+          </div>
           <div style="padding: 20px;
                       padding-bottom: 10px;
                       padding-top: 30px;
                       height: 100px;
                       box-sizing: border-box;">
-            <p style="margin: 0; font-family: Arial; font-size: .9em;">The project is a basic calculator with different
-              basic mathemathical operations, following the EMDAS heirarchy of operation.</p>
+            <p style="margin: 0; font-family: Arial; font-size: .9em; text-align: center;">This project is built for the
+              purpose of enabbling users to
+              enter a list of task infinitely with a function to set a date and delete task. It is built using HTML,
+              CSS
+              and Javascript.</p>
           </div>
           <div style="display: flex;
                       gap: 10px;
@@ -437,37 +485,51 @@
                   width: 100%;
                   max-width: 100%;
                   height: 185px;
-                  background-color: rgba(255, 255, 255, 0) ;
+                  background-color: #9b59d0c2 ;
                   border-radius: 10px;
                   box-sizing: border-box;
                   display: flex;
                   justify-content: center;
                   align-items: center;
                   position: relative;
-                  overflow-x: hidden;
+                  overflow-y: hidden;
                   border: 2px solid #7030a0;
                   box-shadow: 0 0 10px;
                   ">
-        <h2 class="title-proj"
-          style="font-family: 'Trebuchet MS'; color: white; text-align: center; color: #ffffff; position: absolute; margin: 0; width: 200px; height: 180px; left: 250px; transition: left .3s ease-in-out; display: flex; justify-content: center; align-items: center;">
-          CALCULATOR <br>
-          PROJECT</h2>
-        <div class="info-proj" style="width: 510px;
-                                      height: 150px;
-                                      background-color: #9b59d000;
-                                      border-radius: 10px 0px 0px 10px;
+        <div class="title-proj"
+          style="position: absolute; margin: 0; width: 100%; height: 100%; transition: left .3s ease-in-out; display: flex; justify-content: center; align-items: center;">
+          <img style="width: 100%; height: 100%; transition: filter .2s ease-in-out;"
+            src="images/prayer-book-project.png" alt="">
+        </div>
+        <div class="info-proj" style="width: 100%;
+                                      height: 160px;
+                                      background-color: #ffffffa7;
+                                      border-radius: 10px;
                                       position: absolute;
-                                      right: -510px;
-                                      transition: right .3s ease-in-out;
+                                      bottom: -600px;
+                                      transition: bottom .3s ease-in-out;
                                       display: flex;
-                                      flex-direction: column;">
+                                      flex-direction: column;
+                                      justify-content: center;
+                                      align-items: center;">
+          <div style="padding: 20px;
+                      padding-bottom: 10px;
+                      padding-top: 20px;
+                      height: 20px;
+                      box-sizing: border-box;">
+            <p style="margin: 0; font-family: 'Segoe UI'; font-size: 1.5em; font-weight: bold; color: #7030a0;">
+              PRAYER BOOK</p>
+          </div>
           <div style="padding: 20px;
                       padding-bottom: 10px;
                       padding-top: 30px;
                       height: 100px;
                       box-sizing: border-box;">
-            <p style="margin: 0; font-family: Arial; font-size: .9em;">The project is a basic calculator with different
-              basic mathemathical operations, following the EMDAS heirarchy of operation.</p>
+            <p style="margin: 0; font-family: Arial; font-size: .9em; text-align: center;">This project is built for the
+              purpose of enabbling users to
+              enter a list of task infinitely with a function to set a date and delete task. It is built using HTML,
+              CSS
+              and Javascript.</p>
           </div>
           <div style="display: flex;
                       gap: 10px;
@@ -490,37 +552,51 @@
                   width: 100%;
                   max-width: 100%;
                   height: 185px;
-                  background-color: rgba(255, 255, 255, 0) ;
+                  background-color: #9b59d0c2 ;
                   border-radius: 10px;
                   box-sizing: border-box;
                   display: flex;
                   justify-content: center;
                   align-items: center;
                   position: relative;
-                  overflow-x: hidden;
+                  overflow-y: hidden;
                   border: 2px solid #7030a0;
                   box-shadow: 0 0 10px;
                   ">
-        <h2 class="title-proj"
-          style="font-family: 'Trebuchet MS'; color: white; text-align: center; color: #ffffff; position: absolute; margin: 0; width: 200px; height: 180px; left: 250px; transition: left .3s ease-in-out; display: flex; justify-content: center; align-items: center;">
-          CALCULATOR <br>
-          PROJECT</h2>
-        <div class="info-proj" style="width: 510px;
-                                      height: 150px;
-                                      background-color: #9b59d000;
-                                      border-radius: 10px 0px 0px 10px;
+        <div class="title-proj"
+          style="position: absolute; margin: 0; width: 100%; height: 100%; transition: left .3s ease-in-out; display: flex; justify-content: center; align-items: center;">
+          <img style="width: 100%; height: 100%; transition: filter .2s ease-in-out;" src="images/tuition-system.png"
+            alt="">
+        </div>
+        <div class="info-proj" style="width: 100%;
+                                      height: 160px;
+                                      background-color: #ffffffa7;
+                                      border-radius: 10px;
                                       position: absolute;
-                                      right: -510px;
-                                      transition: right .3s ease-in-out;
+                                      bottom: -600px;
+                                      transition: bottom .3s ease-in-out;
                                       display: flex;
-                                      flex-direction: column;">
+                                      flex-direction: column;
+                                      justify-content: center;
+                                      align-items: center;">
+          <div style="padding: 20px;
+                      padding-bottom: 10px;
+                      padding-top: 20px;
+                      height: 20px;
+                      box-sizing: border-box;">
+            <p style="margin: 0; font-family: 'Segoe UI'; font-size: 1.5em; font-weight: bold; color: #7030a0;">
+              COMMAND-LINE TUITION SYSTEM</p>
+          </div>
           <div style="padding: 20px;
                       padding-bottom: 10px;
                       padding-top: 30px;
                       height: 100px;
                       box-sizing: border-box;">
-            <p style="margin: 0; font-family: Arial; font-size: .9em;">The project is a basic calculator with different
-              basic mathemathical operations, following the EMDAS heirarchy of operation.</p>
+            <p style="margin: 0; font-family: Arial; font-size: .9em; text-align: center;">This project is built for the
+              purpose of enabbling users to
+              enter a list of task infinitely with a function to set a date and delete task. It is built using HTML,
+              CSS
+              and Javascript.</p>
           </div>
           <div style="display: flex;
                       gap: 10px;
@@ -539,6 +615,7 @@
           </div>
         </div>
       </div>
+
     </div>
     <div style="grid-area: mastery;
                 background-color:#6f30a0a1;
