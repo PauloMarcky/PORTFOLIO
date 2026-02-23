@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -5,18 +6,21 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Hello There :]</title>
   <style>
-    progress {
-      appearance: none;
+    /* --- Base Body Style --- */
+    body {
+      margin: 0;
+      padding: 0;
+      background: radial-gradient(circle at center, #efd0f7 0%, #9b59d0 30%, #7030a0 70%);
+      height: 100vh;
+      width: 100vw;
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: space-evenly;
+      overflow: hidden;
     }
 
-    progress::-webkit-progress-value {
-      background-color: white;
-    }
-
-    progress::-webkit-progress-bar {
-      background-color: #00000000;
-    }
-
+    /* --- Animations --- */
     @keyframes fadeLeft {
       from {
         opacity: 0;
@@ -41,724 +45,452 @@
       }
     }
 
-    .proj-container::-webkit-scrollbar {
-      display: none;
+    /* --- Global Elements --- */
+    .main-header {
+      background-color: #260044;
+      width: 100%;
+      height: 50px;
+      position: fixed;
+      top: 0;
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+      z-index: 10;
     }
 
-    @keyframes fadeLeft {
-      from {
-        opacity: 0;
-        transform: translateX(40px);
-      }
-
-      to {
-        opacity: 1;
-        transform: translateX(0px);
-      }
+    .logo {
+      font-family: Verdana;
+      color: white;
+      font-weight: bold;
+      font-size: 1.3em;
+      margin-left: 60px;
     }
 
-    @keyframes fadeRight {
-      from {
-        opacity: 0;
-        transform: translateX(-40px);
-      }
-
-      to {
-        opacity: 1;
-        transform: translateX(0px);
-      }
+    .header-info {
+      font-family: 'Segoe UI';
+      color: white;
+      display: flex;
+      gap: 20px;
+      margin-right: 60px;
     }
 
-    @keyframes pop-up {
-      from {
-        transform: scale(50%)
-      }
-
-      to {
-        transform: scale(100%);
-      }
+    /* --- Navigation --- */
+    .side-nav-container {
+      background-color: rgba(0, 0, 0, 0);
+      width: 150px;
+      height: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
     }
 
-    button {
+    .side-nav {
+      display: grid;
+      grid-template-rows: repeat(4, auto);
+      gap: 20px;
+      background: linear-gradient(180deg, #7030a0 1%, #efd0f7 50%, #efd0f7 50%, #7030a0 99%);
+      width: 100px;
+      height: 500px;
+      border-radius: 50px;
+      justify-content: center;
+      align-content: center;
+      margin-top: 60px;
+    }
+
+    .nav-item {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .nav-btn {
+      background-color: #f4f4f4;
+      width: 40px;
+      height: 40px;
+      border-radius: 20px;
+      border: 0;
       transition: ease-out .1s;
+      display: flex;
+      justify-content: center;
+      align-items: center;
     }
 
+    .nav-btn img {
+      width: 20px;
+      height: 20px;
+    }
+
+    .nav-btn:hover,
     .link:hover .nav-btn {
       background-color: #cdcdcd !important;
       cursor: pointer;
     }
 
-    button:hover {
-      cursor: pointer;
+    .nav-label {
+      margin-top: 5px;
+      font: .8em 'Segoe UI';
+      color: #000000;
     }
 
-    .container:hover .info-proj {
-      bottom: 0px !important;
+    .active-btn {
+      background-color: #e794f17c;
+      border: 2px solid rgb(157, 7, 180);
     }
 
-    .container:hover .title-proj img {
-      filter: blur(7px) !important;
+    .active-label {
+      color: #7030a0;
     }
 
-    .proj-container {
-      opacity: 0;
-      animation: fadeRight .9s ease-out forwards;
-      animation-delay: .8s;
+    /* --- Main Layout --- */
+    .main-content {
+      height: 600px;
+      width: 78em;
+      border-radius: 30px;
+      padding: 0 50px 30px 50px;
+      box-sizing: border-box;
+      display: grid;
+      grid-template-columns: 500px 400px;
+      grid-template-rows: 100px auto;
+      grid-template-areas: 'title title'
+        'pjct mastery';
+      align-items: center;
+      justify-content: center;
     }
 
     .title {
+      grid-area: title;
+      display: flex;
+      justify-content: center;
+      align-items: center;
       opacity: 0;
       animation: fadeRight .9s ease-out forwards;
       animation-delay: .4s;
     }
 
+    .title h1 {
+      font-family: 'Trebuchet MS';
+      font-size: 2.8em;
+      color: white;
+    }
+
+    /* --- Projects Section --- */
+    .proj-container {
+      grid-area: pjct;
+      display: flex;
+      flex-direction: column;
+      row-gap: 20px;
+      overflow-y: scroll;
+      overflow-x: hidden;
+      height: 400px;
+      padding: 20px;
+      box-sizing: border-box;
+      opacity: 0;
+      animation: fadeRight .9s ease-out forwards;
+      animation-delay: .8s;
+      direction: rtl;
+    }
+
+    .proj-container::-webkit-scrollbar {
+      background-color: #260044;
+      width: 20px;
+      border-radius: 10px;
+    }
+
+    .proj-container::-webkit-scrollbar-thumb {
+      background: white;
+      border-radius: 10px;
+    }
+
+    .container {
+      flex-shrink: 0;
+      width: 100%;
+      height: 150px;
+      background-color: #9b59d0c2;
+      border-radius: 10px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      position: relative;
+      overflow: hidden;
+      border: 2px solid #7030a0;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    }
+
+    .title-proj {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .title-proj img {
+      width: 100%;
+      height: 100%;
+      transition: filter .2s ease-in-out;
+    }
+
+    .info-proj {
+      width: 100%;
+      height: 100%;
+      background-color: #ffffffa7;
+      position: absolute;
+      bottom: -100%;
+      transition: bottom .3s ease-in-out;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      padding: 10px;
+      box-sizing: border-box;
+      row-gap: 10px;
+    }
+
+    .container:hover .info-proj {
+      bottom: 0;
+    }
+
+    .container:hover .title-proj img {
+      filter: blur(7px);
+    }
+
+    .info-title {
+      font-family: 'Segoe UI';
+      font-size: 1.2em;
+      font-weight: bold;
+      color: #7030a0;
+      margin: 0;
+    }
+
+    .info-desc {
+      font-family: Arial;
+      font-size: .85em;
+      text-align: center;
+      margin: 5px 0;
+    }
+
+    .btn-group {
+      display: flex;
+      gap: 10px;
+    }
+
+    .action-btn {
+      height: 35px;
+      border-radius: 15px;
+      border: none;
+      font-size: 0.8em;
+      padding: 0 10px;
+      cursor: pointer;
+    }
+
+    /* --- Mastery Section --- */
     .mastery {
+      grid-area: mastery;
+      background-color: #7030a0;
+      margin-left: 50px;
+      height: 450px;
+      padding: 20px;
+      box-sizing: border-box;
+      border-radius: 10px;
+      display: flex;
+      flex-direction: column;
+      row-gap: 13px;
+      align-items: center;
+      justify-content: center;
+      border: 2px solid white;
       opacity: 0;
       animation: fadeLeft .9s ease-out forwards;
       animation-delay: 1s;
     }
+
+    .mastery h2 {
+      font-family: 'Trebuchet MS';
+      color: white;
+      margin: 0px;
+      margin-bottom: 10px;
+    }
+
+    .skill-row {
+      display: flex;
+      column-gap: 20px;
+      align-items: center;
+      width: 100%;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .skill-icon {
+      width: 40px;
+      height: 40px;
+      object-fit: contain;
+    }
+
+    progress {
+      appearance: none;
+      height: 20px;
+      width: 200px;
+    }
+
+    progress::-webkit-progress-value {
+      background-color: white;
+      border-radius: 10px;
+    }
+
+    progress::-webkit-progress-bar {
+      background-color: rgba(255, 255, 255, 0.2);
+      border-radius: 10px;
+    }
   </style>
 </head>
 
-<body style="margin: 0;
-             padding: 0;
-             background: radial-gradient(
-             circle at center,
-             #efd0f7 0%,
-             #9b59d0 30%,
-             #7030a0 70%);
-             height:100vh;
-             width: 100vw;
-             position: relative;
-             display: flex;
-             align-items: center;
-             justify-content: space-evenly;
-">
-  <header style="background-color: #260044;
-                 width: 100%;
-                 height: 50px;
-                 position: fixed;
-                 top: 0;
-                 display: flex;
-                 flex-direction: row;
-                 justify-content:space-between;
-                 align-items: center ;
-                 ">
-    <div style="font-family:Verdana; 
-                color: white; 
-                font-weight: bold; 
-                font-size: 1.3em;
-                margin-left: 60px;">
+<body>
+  <header class="main-header">
+    <div class="logo">
       <p>MKY.DEV</p>
     </div>
-    <div style="font-family: 'Segoe UI'; 
-                color: white;
-                display: flex;
-                gap: 20px;
-                margin-right: 60px;">
+    <div class="header-info">
       <p><small>@IT FREE ELECTIVE</small></p>
       <p><small>BSIT 2-A</small></p>
     </div>
   </header>
 
-  <header style="
-                background-color: rgba(0, 0, 0, 0);
-                padding: 0;
-                width: 150px;
-                height: 100%;
-                display: flex;
-                justify-content: center;
-                align-items: center;
-                align-content:center;
-                justify-items: center;">
-    <nav style="display: grid;
-                grid-template-rows: repeat(4, auto);
-                gap: 20px;
-                background: linear-gradient(180deg, #7030a0 1%,#efd0f7 50%, #efd0f7 50%, #7030a0 99%);
-                width: 100px;
-                height: 500px;
-                border-radius: 50px;
-                justify-content: center;
-                align-content: center;
-                justify-items: center;
-                margin-top: 60px;">
-      <div style="display: flex; flex-direction: column; align-items: center;">
-        <a class="link" href="index.html">
-          <button class="nav-btn" style="background-color: #f4f4f4;
-                    width: 40px;
-                    height: 40px;
-                    border-radius: 20px;
-                    border: 0"><img style="width: 20px; height: 20px;" src="images/icons8-home-24.png"
-              alt="home-button"></button>
-        </a>
-        <p style="margin-top: 5px;
-                font: .8em 'Segoe UI';
-                color: #000000;">Home</p>
+  <div class="side-nav-container">
+    <nav class="side-nav">
+      <div class="nav-item">
+        <a class="link" href="index.html"><button class="nav-btn"><img src="images/icons8-home-24.png"
+              alt="home"></button></a>
+        <p class="nav-label">Home</p>
       </div>
-      <div style="display: flex; flex-direction: column; align-items: center;">
-        <a class="link" href="about_me.html">
-          <button class="nav-btn" style="background-color: #f4f4f4;
-                    width: 40px;
-                    height: 40px;
-                    border-radius: 20px;
-                    border: 0"><img style="width: 20px; height: 20px;" src="images/icons8-about-me-50.png"
-              alt="about-me-button"></button>
-        </a>
-        <p style="margin-top: 5px;
-                font: .8em 'Segoe UI'">About me</p>
+      <div class="nav-item">
+        <a class="link" href="about_me.html"><button class="nav-btn"><img src="images/icons8-about-me-50.png"
+              alt="about"></button></a>
+        <p class="nav-label">About me</p>
       </div>
-      <div style="display: flex; flex-direction: column; align-items: center;">
-        <a class="link" href="contact.html">
-          <button class="nav-btn" style="background-color: #f4f4f4;
-                    width: 40px;
-                    height:   40px;
-                    border-radius: 20px;
-                    border: 0;"><img style="width: 20px; height: 20px;" src="images/icons8-contact-30.png"
-              alt="contact-info-button"></button>
-        </a>
-        <p style="margin-top: 5px;
-                font: .8em 'Segoe UI'">Contacts</p>
+      <div class="nav-item">
+        <a class="link" href="contact.html"><button class="nav-btn"><img src="images/icons8-contact-30.png"
+              alt="contact"></button></a>
+        <p class="nav-label">Contacts</p>
       </div>
-      <div style="display: flex; flex-direction: column; align-items: center;">
-        <a class="link" href="project.html">
-          <button style="background-color: #e794f17c;
-                    width: 40px;
-                    height: 40px;
-                    border-radius: 20px;
-                    border: 2px solid rgb(157, 7, 180)"><img style="width: 20px; height: 20px;"
-              src="images/icons8-project-48.png" alt="projects-button"></button>
-        </a>
-        <p style="margin-top: 5px;
-                font: .8em 'Segoe UI';
-                color: #7030a0;
-                ">Projects</p>
+      <div class="nav-item">
+        <a class="link" href="project.html"><button class="nav-btn active-btn"><img src="images/icons8-project-48.png"
+              alt="projects"></button></a>
+        <p class="nav-label active-label">Projects</p>
       </div>
     </nav>
-  </header>
-  <div style="height: 600px;
-              width: 78em;
-              border-radius: 30px;
-              padding-right: 50px;
-              padding-left: 50px;
-              padding-bottom: 30px;
-              padding-top: 0px;
-              box-sizing: border-box;
-              position: relative;
-              display: grid;
-              grid-template-columns: 600px 400px;
-              grid-template-rows: 100px 200px;
-              grid-template-areas:
-                'title title'
-                'pjct mastery'
-                'pjct mastery';
-              align-items: center;
-              justify-content: center;
-              column-gap: 0px;
-              margin-top: 0px;
-              background-color: hsla(288, 71%, 89%, 0);
-">
-    <div class="title" style="grid-area: title;
-                display: flex;
-                justify-content: center;
-                align-items: center;">
-      <h1 style="margin:10px;
-                 font-family: 'Trebuchet MS';
-                 font-size: 2.8em;
-                 color: white;">PROJECTS</h1>
+  </div>
+
+  <div class="main-content">
+    <div class="title">
+      <h1>PROJECTS</h1>
     </div>
-    <div class="proj-container" style="grid-area: pjct;
-                display: flex;
-                flex-direction: column;
-                row-gap: 20px;
-                justify-content: flex-start;
-                overflow: scroll;
-                height: 480px;
-                padding: 20px;
-                box-sizing: border-box;
-                border-radius: 20px;
-                background-color: #9b59d000">
-      <div class="container" style="flex-shrink: 0;
-                  width: 100%;
-                  max-width: 100%;
-                  height: 150px;
-                  background-color: #9b59d0c2 ;
-                  border-radius: 10px;
-                  box-sizing: border-box;
-                  display: flex;
-                  justify-content: center;
-                  align-items: center;
-                  position: relative;
-                  overflow-y: hidden;
-                  border: 2px solid #7030a0;
-                  box-shadow: 0 0 10px;
-                  ">
-        <div class="title-proj"
-          style="position: absolute; margin: 0; width: 100%; height: 100%; transition: left .3s ease-in-out; display: flex; justify-content: center; align-items: center;">
-          <img style="width: 100%; height: 100%; transition: filter .2s ease-in-out;" src="images/calcu-project.png"
-            alt="">
-        </div>
-        <div class="info-proj" style="width: 100%;
-                                      height: 160px;
-                                      background-color: #ffffffa7;
-                                      border-radius: 10px;
-                                      position: absolute;
-                                      bottom: -600px;
-                                      transition: bottom .3s ease-in-out;
-                                      display: flex;
-                                      flex-direction: column;
-                                      justify-content: center;
-                                      align-items: center;">
-          <div style="padding: 20px;
-                      padding-bottom: 10px;
-                      padding-top: 20px;
-                      height: 20px;
-                      box-sizing: border-box;">
-            <p style="margin: 0; font-family: 'Segoe UI'; font-size: 1.5em; font-weight: bold; color: #7030a0;">
-              CALCULATOR</p>
-          </div>
-          <div style="padding: 20px;
-                      padding-bottom: 10px;
-                      padding-top: 30px;
-                      height: 100px;
-                      box-sizing: border-box;">
-            <p style="margin: 0; font-family: Arial; font-size: .9em; text-align: center;">The project is a basic
-              calculator with the
-              basic mathemathical operations, following the EMDAS heirarchy of operation. It is built using HTML, CSS
-              and Javascript.</p>
-          </div>
-          <div style="display: flex;
-                      gap: 10px;
-                      padding-left: 20px;
-                      height: 50px;
-                      justify-content: left;
-                      align-items: center;
-                      padding-bottom: 20px;">
-            <button
-              style="height: 40px; width: 120px; background-color: rgba(116, 255, 116, 0); background-color: rgb(97, 255, 97); border-radius: 15px; border: none; ">
-              👁
-              VIEW CODE</button>
-            <button
-              style="height: 40px; width: 110px; background-color: rgba(116, 255, 116, 0); background-color: rgb(255, 97, 97); border-radius: 15px; border: none; ">
-              ▶︎ LIVE VIEW</button>
-          </div>
-        </div>
-      </div>
-      <div class="container" style="flex-shrink: 0;
-                  width: 100%;
-                  max-width: 100%;
-                  height: 150px;
-                  background-color: #9b59d0c2 ;
-                  border-radius: 10px;
-                  box-sizing: border-box;
-                  display: flex;
-                  justify-content: center;
-                  align-items: center;
-                  position: relative;
-                  overflow-y: hidden;
-                  border: 2px solid #7030a0;
-                  box-shadow: 0 0 10px;
-                  ">
-        <div class="title-proj"
-          style="position: absolute; margin: 0; width: 100%; height: 100%; transition: left .3s ease-in-out; display: flex; justify-content: center; align-items: center;">
-          <img style="width: 100%; height: 100%; transition: filter .2s ease-in-out;"
-            src="images/to-do-list-project.png" alt="">
-        </div>
-        <div class="info-proj" style="width: 100%;
-                                      height: 160px;
-                                      background-color: #ffffffa7;
-                                      border-radius: 10px;
-                                      position: absolute;
-                                      bottom: -600px;
-                                      transition: bottom .3s ease-in-out;
-                                      display: flex;
-                                      flex-direction: column;
-                                      justify-content: center;
-                                      align-items: center;">
-          <div style="padding: 20px;
-                      padding-bottom: 10px;
-                      padding-top: 20px;
-                      height: 20px;
-                      box-sizing: border-box;">
-            <p style="margin: 0; font-family: 'Segoe UI'; font-size: 1.5em; font-weight: bold; color: #7030a0;">
-              TO DO LIST</p>
-          </div>
-          <div style="padding: 20px;
-                      padding-bottom: 10px;
-                      padding-top: 30px;
-                      height: 100px;
-                      box-sizing: border-box;">
-            <p style="margin: 0; font-family: Arial; font-size: .9em; text-align: center;">This project is built for the
-              purpose of enabbling users to
-              enter a list of task infinitely with a function to set a date and delete task. It is built using HTML,
-              CSS
-              and Javascript.</p>
-          </div>
-          <div style="display: flex;
-                      gap: 10px;
-                      padding-left: 20px;
-                      height: 50px;
-                      justify-content: left;
-                      align-items: center;
-                      padding-bottom: 20px;">
-            <button
-              style="height: 40px; width: 120px; background-color: rgba(116, 255, 116, 0); background-color: rgb(97, 255, 97); border-radius: 15px; border: none; ">
-              👁
-              VIEW CODE</button>
-            <button
-              style="height: 40px; width: 110px; background-color: rgba(116, 255, 116, 0); background-color: rgb(255, 97, 97); border-radius: 15px; border: none; ">
-              ▶︎ LIVE VIEW</button>
-          </div>
-        </div>
-      </div>
-      <div class="container" style="flex-shrink: 0;
-                  width: 100%;
-                  max-width: 100%;
-                  height: 150px;
-                  background-color: #9b59d0c2 ;
-                  border-radius: 10px;
-                  box-sizing: border-box;
-                  display: flex;
-                  justify-content: center;
-                  align-items: center;
-                  position: relative;
-                  overflow-y: hidden;
-                  border: 2px solid #7030a0;
-                  box-shadow: 0 0 10px;
-                  ">
-        <div class="title-proj"
-          style="position: absolute; margin: 0; width: 100%; height: 100%; transition: left .3s ease-in-out; display: flex; justify-content: center; align-items: center;">
-          <img style="width: 100%; height: 100%; transition: filter .2s ease-in-out;"
-            src="images/fitness-web-project.png" alt="">
-        </div>
-        <div class="info-proj" style="width: 100%;
-                                      height: 160px;
-                                      background-color: #ffffffa7;
-                                      border-radius: 10px;
-                                      position: absolute;
-                                      bottom: -600px;
-                                      transition: bottom .3s ease-in-out;
-                                      display: flex;
-                                      flex-direction: column;
-                                      justify-content: center;
-                                      align-items: center;">
-          <div style="padding: 20px;
-                      padding-bottom: 10px;
-                      padding-top: 20px;
-                      height: 20px;
-                      box-sizing: border-box;">
-            <p style="margin: 0; font-family: 'Segoe UI'; font-size: 1.5em; font-weight: bold; color: #7030a0;">
-              FITNESS WEBSITE</p>
-          </div>
-          <div style="padding: 20px;
-                      padding-bottom: 10px;
-                      padding-top: 30px;
-                      height: 100px;
-                      box-sizing: border-box;">
-            <p style="margin: 0; font-family: Arial; font-size: .9em; text-align: center;">This project is built for the
-              purpose of enabbling users to
-              enter a list of task infinitely with a function to set a date and delete task. It is built using HTML,
-              CSS
-              and Javascript.</p>
-          </div>
-          <div style="display: flex;
-                      gap: 10px;
-                      padding-left: 20px;
-                      height: 50px;
-                      justify-content: left;
-                      align-items: center;
-                      padding-bottom: 20px;">
-            <button
-              style="height: 40px; width: 120px; background-color: rgba(116, 255, 116, 0); background-color: rgb(97, 255, 97); border-radius: 15px; border: none; ">
-              👁
-              VIEW CODE</button>
-            <button
-              style="height: 40px; width: 110px; background-color: rgba(116, 255, 116, 0); background-color: rgb(255, 97, 97); border-radius: 15px; border: none; ">
-              ▶︎ LIVE VIEW</button>
-          </div>
-        </div>
-      </div>
-      <div class="container" style="flex-shrink: 0;
-                  width: 100%;
-                  max-width: 100%;
-                  height: 150px;
-                  background-color: #9b59d0c2 ;
-                  border-radius: 10px;
-                  box-sizing: border-box;
-                  display: flex;
-                  justify-content: center;
-                  align-items: center;
-                  position: relative;
-                  overflow-y: hidden;
-                  border: 2px solid #7030a0;
-                  box-shadow: 0 0 10px;
-                  ">
-        <div class="title-proj"
-          style="position: absolute; margin: 0; width: 100%; height: 100%; transition: left .3s ease-in-out; display: flex; justify-content: center; align-items: center;">
-          <img style="width: 100%; height: 100%; transition: filter .2s ease-in-out;" src="images/guess-number-game.png"
-            alt="">
-        </div>
-        <div class="info-proj" style="width: 100%;
-                                      height: 160px;
-                                      background-color: #ffffffa7;
-                                      border-radius: 10px;
-                                      position: absolute;
-                                      bottom: -600px;
-                                      transition: bottom .3s ease-in-out;
-                                      display: flex;
-                                      flex-direction: column;
-                                      justify-content: center;
-                                      align-items: center;">
-          <div style="padding: 20px;
-                      padding-bottom: 10px;
-                      padding-top: 20px;
-                      height: 20px;
-                      box-sizing: border-box;">
-            <p style="margin: 0; font-family: 'Segoe UI'; font-size: 1.5em; font-weight: bold; color: #7030a0;">
-              GUESSING GAME</p>
-          </div>
-          <div style="padding: 20px;
-                      padding-bottom: 10px;
-                      padding-top: 30px;
-                      height: 100px;
-                      box-sizing: border-box;">
-            <p style="margin: 0; font-family: Arial; font-size: .9em; text-align: center;">This project is built for the
-              purpose of enabbling users to
-              enter a list of task infinitely with a function to set a date and delete task. It is built using HTML,
-              CSS
-              and Javascript.</p>
-          </div>
-          <div style="display: flex;
-                      gap: 10px;
-                      padding-left: 20px;
-                      height: 50px;
-                      justify-content: left;
-                      align-items: center;
-                      padding-bottom: 20px;">
-            <button
-              style="height: 40px; width: 120px; background-color: rgba(116, 255, 116, 0); background-color: rgb(97, 255, 97); border-radius: 15px; border: none; ">
-              👁
-              VIEW CODE</button>
-            <button
-              style="height: 40px; width: 110px; background-color: rgba(116, 255, 116, 0); background-color: rgb(255, 97, 97); border-radius: 15px; border: none; ">
-              ▶︎ LIVE VIEW</button>
-          </div>
-        </div>
-      </div>
-      <div class="container" style="flex-shrink: 0;
-                  width: 100%;
-                  max-width: 100%;
-                  height: 150px;
-                  background-color: #9b59d0c2 ;
-                  border-radius: 10px;
-                  box-sizing: border-box;
-                  display: flex;
-                  justify-content: center;
-                  align-items: center;
-                  position: relative;
-                  overflow-y: hidden;
-                  border: 2px solid #7030a0;
-                  box-shadow: 0 0 10px;
-                  ">
-        <div class="title-proj"
-          style="position: absolute; margin: 0; width: 100%; height: 100%; transition: left .3s ease-in-out; display: flex; justify-content: center; align-items: center;">
-          <img style="width: 100%; height: 100%; transition: filter .2s ease-in-out;"
-            src="images/prayer-book-project.png" alt="">
-        </div>
-        <div class="info-proj" style="width: 100%;
-                                      height: 160px;
-                                      background-color: #ffffffa7;
-                                      border-radius: 10px;
-                                      position: absolute;
-                                      bottom: -600px;
-                                      transition: bottom .3s ease-in-out;
-                                      display: flex;
-                                      flex-direction: column;
-                                      justify-content: center;
-                                      align-items: center;">
-          <div style="padding: 20px;
-                      padding-bottom: 10px;
-                      padding-top: 20px;
-                      height: 20px;
-                      box-sizing: border-box;">
-            <p style="margin: 0; font-family: 'Segoe UI'; font-size: 1.5em; font-weight: bold; color: #7030a0;">
-              PRAYER BOOK</p>
-          </div>
-          <div style="padding: 20px;
-                      padding-bottom: 10px;
-                      padding-top: 30px;
-                      height: 100px;
-                      box-sizing: border-box;">
-            <p style="margin: 0; font-family: Arial; font-size: .9em; text-align: center;">This project is built for the
-              purpose of enabbling users to
-              enter a list of task infinitely with a function to set a date and delete task. It is built using HTML,
-              CSS
-              and Javascript.</p>
-          </div>
-          <div style="display: flex;
-                      gap: 10px;
-                      padding-left: 20px;
-                      height: 50px;
-                      justify-content: left;
-                      align-items: center;
-                      padding-bottom: 20px;">
-            <button
-              style="height: 40px; width: 120px; background-color: rgba(116, 255, 116, 0); background-color: rgb(97, 255, 97); border-radius: 15px; border: none; ">
-              👁
-              VIEW CODE</button>
-            <button
-              style="height: 40px; width: 110px; background-color: rgba(116, 255, 116, 0); background-color: rgb(255, 97, 97); border-radius: 15px; border: none; ">
-              ▶︎ LIVE VIEW</button>
-          </div>
-        </div>
-      </div>
-      <div class="container" style="flex-shrink: 0;
-                  width: 100%;
-                  max-width: 100%;
-                  height: 150px;
-                  background-color: #9b59d0c2 ;
-                  border-radius: 10px;
-                  box-sizing: border-box;
-                  display: flex;
-                  justify-content: center;
-                  align-items: center;
-                  position: relative;
-                  overflow-y: hidden;
-                  border: 2px solid #7030a0;
-                  box-shadow: 0 0 10px;
-                  ">
-        <div class="title-proj"
-          style="position: absolute; margin: 0; width: 100%; height: 100%; transition: left .3s ease-in-out; display: flex; justify-content: center; align-items: center;">
-          <img style="width: 100%; height: 100%; transition: filter .2s ease-in-out;" src="images/tuition-system.png"
-            alt="">
-        </div>
-        <div class="info-proj" style="width: 100%;
-                                      height: 160px;
-                                      background-color: #ffffffa7;
-                                      border-radius: 10px;
-                                      position: absolute;
-                                      bottom: -600px;
-                                      transition: bottom .3s ease-in-out;
-                                      display: flex;
-                                      flex-direction: column;
-                                      justify-content: center;
-                                      align-items: center;">
-          <div style="padding: 20px;
-                      padding-bottom: 10px;
-                      padding-top: 20px;
-                      height: 20px;
-                      box-sizing: border-box;">
-            <p style="margin: 0; font-family: 'Segoe UI'; font-size: 1.5em; font-weight: bold; color: #7030a0;">
-              COMMAND-LINE TUITION SYSTEM</p>
-          </div>
-          <div style="padding: 20px;
-                      padding-bottom: 10px;
-                      padding-top: 30px;
-                      height: 100px;
-                      box-sizing: border-box;">
-            <p style="margin: 0; font-family: Arial; font-size: .9em; text-align: center;">This project is built for the
-              purpose of enabbling users to
-              enter a list of task infinitely with a function to set a date and delete task. It is built using HTML,
-              CSS
-              and Javascript.</p>
-          </div>
-          <div style="display: flex;
-                      gap: 10px;
-                      padding-left: 20px;
-                      height: 50px;
-                      justify-content: left;
-                      align-items: center;
-                      padding-bottom: 20px;">
-            <button
-              style="height: 40px; width: 120px; background-color: rgba(116, 255, 116, 0); background-color: rgb(97, 255, 97); border-radius: 15px; border: none; ">
-              👁
-              VIEW CODE</button>
-            <button
-              style="height: 40px; width: 110px; background-color: rgba(116, 255, 116, 0); background-color: rgb(255, 97, 97); border-radius: 15px; border: none; ">
-              ▶︎ LIVE VIEW</button>
+
+    <div class="proj-container">
+      <div class="container">
+        <div class="title-proj"><img src="images/calcu-project.png" alt="Calculator"></div>
+        <div class="info-proj">
+          <p class="info-title">CALCULATOR</p>
+          <p class="info-desc">Basic calculator with EMDAS hierarchy. Built with HTML, CSS, and JS.</p>
+          <div class="btn-group">
+            <a href="https://paulomarcky.github.io/Calcu/"><button class="action-btn"
+                style="background-color: rgb(97, 255, 97);">👁 VIEW CODE</button></a>
+            <button class="action-btn" style="background-color: rgb(255, 97, 97);">▶︎ LIVE VIEW</button>
           </div>
         </div>
       </div>
 
-    </div>
-    <div class="mastery" style="grid-area: mastery;
-                background-color:#7030a0;
-                margin-left: 50px;
-                height: 480px;
-                padding: 20px;
-                box-sizing: border-box;
-                border-radius: 10px;
-                display: flex;
-                flex-direction: column;
-                row-gap: 20px;
-                align-items: center;
-                justify-content: center;
-                border: 2px solid white;">
-      <div>
-        <h2 style="margin: 10px;
-                   margin-top: 0;
-                   font-family: 'Trebuchet MS'; color: white;">MASTERY LEVEL</h2>
-      </div>
-      <div style="display: flex;
-                  flex-direction: row;
-                  column-gap: 20px;
-                  align-items: center;">
-        <div style="width: 80px; font-size: 1.1em; font-family: 'Trebuchet MS'; color: white;"><label>HTML </label>
+      <div class="container">
+        <div class="title-proj"><img src="images/to-do-list-project.png" alt="To Do List"></div>
+        <div class="info-proj">
+          <p class="info-title">TO DO LIST</p>
+          <p class="info-desc">Infinite task entry with date setting and deletion. HTML, CSS, JS.</p>
+          <div class="btn-group">
+            <button class="action-btn" style="background-color: rgb(97, 255, 97);">👁 VIEW CODE</button>
+            <button class="action-btn" style="background-color: rgb(255, 97, 97);">▶︎ LIVE VIEW</button>
+          </div>
         </div>
-        <div><progress style="height: 30px; width: 200px;" value="70" max="100"> 70% </progress></div>
-      </div>
-      <div style="display: flex;
-                  flex-direction: row;
-                  column-gap: 20px;
-                  justify-content: center;
-                  align-items: center;">
-        <div style="width: 80px; font-size: 1.1em; font-family: 'Trebuchet MS'; color: white;"><label>CSS </label></div>
-        <div><progress style="height: 30px; width: 200px;" value="80" max="100"> 80% </progress></div>
-      </div>
-      <div style="display: flex;
-                  flex-direction: row;
-                  column-gap: 20px;
-                  justify-content: center;
-                  align-items: center;">
-        <div style="width: 80px; font-size: 1.1em; font-family: 'Trebuchet MS'; color: white;"><label>JavaScript
-          </label></div>
-        <div><progress style="height: 30px; width: 200px;" value="60" max="100"> 60% </progress></div>
-      </div>
-      <div style="display: flex;
-                  flex-direction: row;
-                  column-gap: 20px;
-                  justify-content: center;
-                  align-items: center;">
-        <div style="width: 80px; font-size: 1.1em; font-family: 'Trebuchet MS'; color: white;"><label>JAVA </label>
-        </div>
-        <div><progress style="height: 30px; width: 200px;" value="40" max="100"> 40% </progress></div>
-      </div>
-      <div style="display: flex;
-                  flex-direction: row;
-                  column-gap: 20px;
-                  justify-content: center;
-                  align-items: center;">
-        <div style="width: 80px; font-size: 1.1em; font-family: 'Trebuchet MS'; color: white;"><label>Python </label>
-        </div>
-        <div><progress style="height: 30px; width: 200px;" value="60" max="100"> 60% </progress></div>
-      </div>
-      <div style="display: flex;
-                  flex-direction: row;
-                  column-gap: 20px;
-                  justify-content: center;
-                  align-items: center;">
-        <div style="width: 80px; font-size: 1.1em; font-family: 'Trebuchet MS'; color: white;"><label>C++ </label></div>
-        <div><progress style="height: 30px; width: 200px;" value="30" max="100"> 30% </progress></div>
-      </div>
-      <div style="display: flex;
-                  flex-direction: row;
-                  column-gap: 20px;
-                  justify-content: center;
-                  align-items: center;">
-        <div style="width: 80px; font-size: 1.1em; font-family: 'Trebuchet MS'; color: white;"><label>MySql </label>
-        </div>
-        <div><progress style="height: 30px; width: 200px;" value="50" max="100"> 40% </progress></div>
       </div>
 
+      <div class="container">
+        <div class="title-proj"><img src="images/fitness-web-project.png" alt="Fitness"></div>
+        <div class="info-proj">
+          <p class="info-title">FITNESS WEBSITE</p>
+          <p class="info-desc">Health tracking and workout schedules. Built with HTML, CSS, and JS.</p>
+          <div class="btn-group">
+            <button class="action-btn" style="background-color: rgb(97, 255, 97);">👁 VIEW CODE</button>
+            <button class="action-btn" style="background-color: rgb(255, 97, 97);">▶︎ LIVE VIEW</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="container">
+        <div class="title-proj"><img src="images/guess-number-game.png" alt="Guess Game"></div>
+        <div class="info-proj">
+          <p class="info-title">GUESSING GAME</p>
+          <p class="info-desc">Interactive number guessing game with feedback loops. HTML, CSS, JS.</p>
+          <div class="btn-group">
+            <button class="action-btn" style="background-color: rgb(97, 255, 97);">👁 VIEW CODE</button>
+            <button class="action-btn" style="background-color: rgb(255, 97, 97);">▶︎ LIVE VIEW</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="container">
+        <div class="title-proj"><img src="images/prayer-book-project.png" alt="Prayer Book"></div>
+        <div class="info-proj">
+          <p class="info-title">PRAYER BOOK</p>
+          <p class="info-desc">Digital collection of prayers with categories. HTML, CSS, JS.</p>
+          <div class="btn-group">
+            <button class="action-btn" style="background-color: rgb(97, 255, 97);">👁 VIEW CODE</button>
+            <button class="action-btn" style="background-color: rgb(255, 97, 97);">▶︎ LIVE VIEW</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="container">
+        <div class="title-proj"><img src="images/tuition-system.png" alt="Tuition"></div>
+        <div class="info-proj">
+          <p class="info-title">TUITION SYSTEM</p>
+          <p class="info-desc">Command-line based management for tuition records. HTML, CSS, JS.</p>
+          <div class="btn-group">
+            <button class="action-btn" style="background-color: rgb(97, 255, 97);">👁 VIEW CODE</button>
+            <button class="action-btn" style="background-color: rgb(255, 97, 97);">▶︎ LIVE VIEW</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="mastery">
+      <h2>MASTERY LEVEL</h2>
+      <div class="skill-row">
+        <img class="skill-icon" src="images/html.png" alt="HTML">
+        <progress value="70" max="100"></progress>
+      </div>
+      <div class="skill-row">
+        <img class="skill-icon" src="images/css.png" alt="CSS">
+        <progress value="80" max="100"></progress>
+      </div>
+      <div class="skill-row">
+        <img class="skill-icon" src="images/javascript.png" alt="JS">
+        <progress value="60" max="100"></progress>
+      </div>
+      <div class="skill-row">
+        <img class="skill-icon" src="images/java.png" alt="Java">
+        <progress value="40" max="100"></progress>
+      </div>
+      <div class="skill-row">
+        <img class="skill-icon" src="images/python.png" alt="Python">
+        <progress value="60" max="100"></progress>
+      </div>
+      <div class="skill-row">
+        <img class="skill-icon" src="images/c++.png" alt="C++">
+        <progress value="30" max="100"></progress>
+      </div>
+      <div class="skill-row">
+        <img class="skill-icon" src="images/mySQL.png" alt="MySQL">
+        <progress value="50" max="100"></progress>
+      </div>
     </div>
   </div>
 </body>
