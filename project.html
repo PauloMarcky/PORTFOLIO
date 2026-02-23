@@ -5,6 +5,42 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Hello There :]</title>
   <style>
+    progress {
+      appearance: none;
+    }
+
+    progress::-webkit-progress-value {
+      background-color: white;
+    }
+
+    progress::-webkit-progress-bar {
+      background-color: #00000000;
+    }
+
+    @keyframes fadeLeft {
+      from {
+        opacity: 0;
+        transform: translateX(40px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateX(0px);
+      }
+    }
+
+    @keyframes fadeRight {
+      from {
+        opacity: 0;
+        transform: translateX(-40px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateX(0px);
+      }
+    }
+
     .proj-container::-webkit-scrollbar {
       display: none;
     }
@@ -62,6 +98,24 @@
 
     .container:hover .title-proj img {
       filter: blur(7px) !important;
+    }
+
+    .proj-container {
+      opacity: 0;
+      animation: fadeRight .9s ease-out forwards;
+      animation-delay: .8s;
+    }
+
+    .title {
+      opacity: 0;
+      animation: fadeRight .9s ease-out forwards;
+      animation-delay: .4s;
+    }
+
+    .mastery {
+      opacity: 0;
+      animation: fadeLeft .9s ease-out forwards;
+      animation-delay: 1s;
     }
   </style>
 </head>
@@ -181,43 +235,52 @@
       </div>
     </nav>
   </header>
-  <div style="height: 550px;
+  <div style="height: 600px;
               width: 78em;
               border-radius: 30px;
               padding-right: 50px;
               padding-left: 50px;
               padding-bottom: 30px;
-              padding-top: 30px;
+              padding-top: 0px;
               box-sizing: border-box;
               position: relative;
               display: grid;
-              grid-template-columns: 1fr 400px;
-              grid-template-rows: 1fr;
+              grid-template-columns: 600px 400px;
+              grid-template-rows: 100px 200px;
               grid-template-areas:
+                'title title'
                 'pjct mastery'
                 'pjct mastery';
               align-items: center;
               justify-content: center;
               column-gap: 0px;
-              margin-top: 50px;
+              margin-top: 0px;
               background-color: hsla(288, 71%, 89%, 0);
 ">
+    <div class="title" style="grid-area: title;
+                display: flex;
+                justify-content: center;
+                align-items: center;">
+      <h1 style="margin:10px;
+                 font-family: 'Trebuchet MS';
+                 font-size: 2.8em;
+                 color: white;">PROJECTS</h1>
+    </div>
     <div class="proj-container" style="grid-area: pjct;
                 display: flex;
                 flex-direction: column;
-                row-gap: 50px;
+                row-gap: 20px;
                 justify-content: flex-start;
                 overflow: scroll;
-                height: 100%;
+                height: 480px;
                 padding: 20px;
                 box-sizing: border-box;
-                border: 2px solid white;
                 border-radius: 20px;
-                background-color: rgba(255, 255, 255, 0.378);">
+                background-color: #9b59d000">
       <div class="container" style="flex-shrink: 0;
                   width: 100%;
                   max-width: 100%;
-                  height: 185px;
+                  height: 150px;
                   background-color: #9b59d0c2 ;
                   border-radius: 10px;
                   box-sizing: border-box;
@@ -283,7 +346,7 @@
       <div class="container" style="flex-shrink: 0;
                   width: 100%;
                   max-width: 100%;
-                  height: 185px;
+                  height: 150px;
                   background-color: #9b59d0c2 ;
                   border-radius: 10px;
                   box-sizing: border-box;
@@ -350,7 +413,7 @@
       <div class="container" style="flex-shrink: 0;
                   width: 100%;
                   max-width: 100%;
-                  height: 185px;
+                  height: 150px;
                   background-color: #9b59d0c2 ;
                   border-radius: 10px;
                   box-sizing: border-box;
@@ -417,7 +480,7 @@
       <div class="container" style="flex-shrink: 0;
                   width: 100%;
                   max-width: 100%;
-                  height: 185px;
+                  height: 150px;
                   background-color: #9b59d0c2 ;
                   border-radius: 10px;
                   box-sizing: border-box;
@@ -484,7 +547,7 @@
       <div class="container" style="flex-shrink: 0;
                   width: 100%;
                   max-width: 100%;
-                  height: 185px;
+                  height: 150px;
                   background-color: #9b59d0c2 ;
                   border-radius: 10px;
                   box-sizing: border-box;
@@ -551,7 +614,7 @@
       <div class="container" style="flex-shrink: 0;
                   width: 100%;
                   max-width: 100%;
-                  height: 185px;
+                  height: 150px;
                   background-color: #9b59d0c2 ;
                   border-radius: 10px;
                   box-sizing: border-box;
@@ -617,10 +680,10 @@
       </div>
 
     </div>
-    <div style="grid-area: mastery;
-                background-color:#6f30a0a1;
+    <div class="mastery" style="grid-area: mastery;
+                background-color:#7030a0;
                 margin-left: 50px;
-                height: 490;
+                height: 480px;
                 padding: 20px;
                 box-sizing: border-box;
                 border-radius: 10px;

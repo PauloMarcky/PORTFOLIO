@@ -1,171 +1,300 @@
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Hello There :]</title>
+  <style>
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      padding: 0;
+      background: radial-gradient(circle at center, #efd0f7 0%, #9b59d0 30%, #7030a0 70%);
+      height: 100vh;
+      width: 100vw;
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: space-evenly;
+      overflow-x: hidden;
+    }
+
+    @keyframes fadeLeft {
+      from {
+        opacity: 0;
+        transform: translateX(40px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateX(0px);
+      }
+    }
+
+    @keyframes fadeRight {
+      from {
+        opacity: 0;
+        transform: translateX(-40px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateX(0px);
+      }
+    }
+
+    @keyframes pop-up {
+      from {
+        opacity: 0;
+        transform: scale(80%);
+      }
+
+      to {
+        opacity: 1;
+        transform: scale(100%);
+      }
+    }
+
+    .top-header {
+      background-color: #260044;
+      width: 100%;
+      height: 50px;
+      position: fixed;
+      top: 0;
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+      z-index: 100;
+    }
+
+    .logo-text {
+      font-family: Verdana;
+      color: white;
+      font-weight: bold;
+      font-size: 1.3em;
+      margin-left: 60px;
+    }
+
+    .header-info {
+      font-family: 'Segoe UI';
+      color: white;
+      display: flex;
+      gap: 20px;
+      margin-right: 60px;
+    }
+
+    .side-nav-container {
+      background-color: transparent;
+      padding: 0;
+      width: 150px;
+      height: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    nav {
+      display: grid;
+      grid-template-rows: repeat(4, auto);
+      gap: 20px;
+      background: linear-gradient(180deg, #7030a0 1%, #efd0f7 50%, #efd0f7 50%, #7030a0 99%);
+      width: 100px;
+      height: 500px;
+      border-radius: 50px;
+      justify-content: center;
+      align-content: center;
+      margin-top: 60px;
+    }
+
+    .nav-item {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .nav-item p {
+      margin-top: 5px;
+      font: .8em 'Segoe UI';
+    }
+
+    .nav-btn {
+      width: 40px;
+      height: 40px;
+      border-radius: 20px;
+      border: 0;
+      background-color: #f4f4f4;
+      transition: ease-out .1s;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .nav-btn img {
+      width: 20px;
+      height: 20px;
+    }
+
+    .btn-home {
+      background-color: #e794f17c;
+      border: 2px solid rgb(157, 7, 180);
+    }
+
+    .link:hover .nav-btn {
+      background-color: #cdcdcd !important;
+    }
+
+    .container {
+      background-color: hsla(288, 71%, 89%, 0.463);
+      height: 550px;
+      width: 78em;
+      border-radius: 30px;
+      padding: 50px;
+      box-sizing: border-box;
+      border: 5px solid white;
+      position: relative;
+      display: grid;
+      grid-template-columns: 700px 20em;
+      grid-template-rows: 250px 90px 100px;
+      grid-template-areas:
+        'name profile-pic'
+        'expertise profile-pic'
+        'view-projects profile-pic';
+      align-items: center;
+      justify-content: center;
+      margin-top: 50px;
+      animation: pop-up .6s ease-in-out forwards;
+      animation-delay: .4s;
+      opacity: 0;
+    }
+
+    .intro {
+      grid-area: name;
+      opacity: 0;
+      animation: fadeRight 1s ease-out forwards;
+      animation-delay: 1s;
+    }
+
+    .intro h1 {
+      color: white;
+      font-size: 5em;
+      font-family: 'Trebuchet MS';
+      margin: 0;
+    }
+
+    .sub-intro {
+      grid-area: expertise;
+      opacity: 0;
+      animation: fadeRight 1s ease-out forwards;
+      animation-delay: 1.2s;
+    }
+
+    .sub-intro h4 {
+      color: rgb(24, 24, 24);
+      font-size: 2em;
+      font-family: 'Arial';
+      margin: 0;
+    }
+
+    .view-project-btn {
+      grid-area: view-projects;
+      justify-self: center;
+      opacity: 0;
+      animation: fadeRight 1s ease-out forwards;
+      animation-delay: 1.4s;
+    }
+
+    .view-project-btn button {
+      width: 220px;
+      height: 50px;
+      border-radius: 18px;
+      background-color: #7030a0;
+      color: white;
+      font-size: 1em;
+      font-family: 'Segoe UI';
+      border: 2px solid rgb(248, 176, 255);
+      cursor: pointer;
+      transition: ease-out .1s;
+    }
+
+    .profile-area {
+      grid-area: profile-pic;
+    }
+
+    .profile {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border-radius: 30px;
+      object-position: 50% 15%;
+      opacity: 0;
+      animation: fadeLeft 1s ease-out forwards;
+      animation-delay: 1.6s;
+    }
+  </style>
 </head>
 
-<body style="margin: 0;
-             padding: 0;
-             background: radial-gradient(
-             circle at center,
-             #efd0f7 0%,
-             #9b59d0 30%,
-             #7030a0 70%);
-             height:100vh;
-             width: 100vw;
-             position: relative;
-             display: flex;
-             align-items: center;
-             justify-content: space-evenly;
-">
-  <header style="background-color: #260044;
-                 width: 100%;
-                 height: 50px;
-                 position: fixed;
-                 top: 0;
-                 display: flex;
-                 justify-content: end;
-                 align-items: center;
-                 gap: 30px;
-                 ">
-    <p style="font-family: 'Segoe UI'; color: white;"><small>@IT FREE ELECTIVE</small></p>
-    <p style="font-family: 'Segoe UI'; color: white; margin-right: 20px; "><small>BSIT 2-A</small></p>
+<body>
 
+  <header class="top-header">
+    <div class="logo-text">
+      <p>MKY.DEV</p>
+    </div>
+    <div class="header-info">
+      <p><small>@IT FREE ELECTIVE</small></p>
+      <p><small>BSIT 2-A</small></p>
+    </div>
   </header>
 
-  <header style="
-                background-color: rgba(0, 0, 0, 0);
-                padding: 0;
-                width: 150px;
-                height: 100%;
-                display: flex;
-                justify-content: center;
-                align-items: center;
-                align-content:center;
-                justify-items: center;
-          ">
-    <nav style="display: grid;
-                grid-template-rows: repeat(4, auto);
-                gap: 20px;
-                background: linear-gradient(180deg, #7030a0 1%,#efd0f7 50%, #efd0f7 50%, #7030a0 99%);
-                width: 100px;
-                height: 500px;
-                border-radius: 50px;
-                justify-content: center;
-                align-content: center;
-                justify-items: center;
-                margin-top: 60px;">
-      <div style="display: flex; flex-direction: column; align-items: center;">
-        <a href="index.html">
-          <button style="background-color: #dadada;
-                    width: 40px;
-                    height: 40px;
-                    border-radius: 20px;
-                    border: 2px solid rgb(157, 7, 180);"><img style="width: 20px; height: 20px;"
-              src="images/icons8-home-24.png" alt="home-button"></button>
+  <header class="side-nav-container">
+    <nav>
+      <div class="nav-item">
+        <a class="link" href="index.html">
+          <button class="nav-btn btn-home"><img src="images/icons8-home-24.png" alt="home"></button>
         </a>
-        <p style="margin-top: 5px;
-                font: .8em 'Segoe UI';">Home</p>
+        <p style="color: #7030a0;">Home</p>
       </div>
-      <div style="display: flex; flex-direction: column; align-items: center;">
-        <a href="about_me.html">
-          <button style="background-color: #dadada;
-                    width: 40px;
-                    height: 40px;
-                    border-radius: 20px;
-                    border: 0"><img style="width: 20px; height: 20px;" src="images/icons8-about-me-50.png"
-              alt="about-me-button"></button>
+      <div class="nav-item">
+        <a class="link" href="about_me.html">
+          <button class="nav-btn"><img src="images/icons8-about-me-50.png" alt="about"></button>
         </a>
-        <p style="margin-top: 5px;
-                font: .8em 'Segoe UI'">About me</p>
+        <p>About me</p>
       </div>
-      <div style="display: flex; flex-direction: column; align-items: center;">
-        <button style="background-color: #dadada;
-                    width: 40px;
-                    height:   40px;
-                    border-radius: 20px;
-                    border: 0;"><img style="width: 20px; height: 20px;" src="images/icons8-contact-30.png"
-            alt="contact-info-button"></button>
-        <p style="margin-top: 5px;
-                font: .8em 'Segoe UI'">Contacts</p>
+      <div class="nav-item">
+        <a class="link" href="contact.html">
+          <button class="nav-btn"><img src="images/icons8-contact-30.png" alt="contact"></button>
+        </a>
+        <p>Contacts</p>
       </div>
-      <div style="display: flex; flex-direction: column; align-items: center;">
-        <button style="background-color: #dadada;
-                    width: 40px;
-                    height: 40px;
-                    border-radius: 20px;
-                    border: 0;"><img style="width: 20px; height: 20px;" src="images/icons8-project-48.png"
-            alt="projects-button"></button>
-        <p style="margin-top: 5px;
-                font: .8em 'Segoe UI'
-                ">Projects</p>
+      <div class="nav-item">
+        <a class="link" href="project.html">
+          <button class="nav-btn"><img src="images/icons8-project-48.png" alt="projects"></button>
+        </a>
+        <p>Projects</p>
       </div>
     </nav>
   </header>
-  <div style="
-              background-color: hsla(288, 71%, 89%, 0.463);
-              height: 550px;
-              width: 78em;
-              border-radius: 30px;
-              padding: 50px;
-              box-sizing: border-box;
-              border: 5px solid white;
-              position: relative;
-              display: grid;
-              grid-template-columns: 40em 30em ;
-              grid-template-rows: 250px 90px 100px;
-              grid-template-areas:
-                'name profile-pic'
-                'expertise profile-pic'
-                'view-projects profile-pic';
-              align-items: center;
-              justify-content: center;
-              column-gap: 20px;
-              margin-top: 50px;
-">
-    <div style="grid-area: name;
-                padding: 0;
-                margin: 0;">
-      <h1 style=" 
-                color: rgb(255, 255, 255);
-                font-size: 5em;
-                font-family: 'Trebuchet MS' ; 
-                margin: 0; 
-                align-items: center;
-               "> Hello, Im Marcky <br> Paulo Balaba</h1>
+
+  <div class="container">
+    <div class="intro">
+      <h1>Hello, I'm Marcky <br> Paulo Balaba</h1>
     </div>
-    <div style="grid-area: expertise;
-                ">
-      <h4 style="
-               color: rgb(24, 24, 24);
-               font-size: 2em;
-               font-family: 'Trebuchet MS';
-               align-items: center;
-               margin: 0%;">UI/UX Designer & Full Stack Developer
-      </h4>
+    <div class="sub-intro">
+      <h4>UI/UX Designer & Full Stack Developer</h4>
     </div>
-    <div style="grid-area: view-projects;
-                ">
-      <button style=" 
-                      width: 220px;
-                      height: 50px;
-                      margin-left:150px;
-                      border-radius: 18px;
-                      border: none;
-                      background-color: #7030a0;
-                      color: white;
-                      font-size: 1em;
-                      font-family:'Segoe UI';
-                      border: 2px solid  rgb(248, 176, 255)">
-        <b>View My Projects</b></button>
+    <div class="view-project-btn">
+      <button><b>View My Projects</b></button>
     </div>
-    <div style="grid-area: profile-pic;">
-      <img src="images/9c688361-a0ab-4b0d-8b8a-211d72e367dc-removebg-preview.png" alt="Profile Picture"
-        style="width: 100%; height: 100%; object-fit: cover; border-radius: 30px; object-position: 50% 15%;">
+    <div class="profile-area">
+      <img class="profile" src="images/profile.png" alt="Profile Picture">
     </div>
   </div>
+
 </body>
 
 </html>
