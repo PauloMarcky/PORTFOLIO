@@ -6,7 +6,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Hello There :]</title>
   <style>
-    /* --- Base Body Style --- */
+    /* =========================================
+       1. BASE STYLES & LAYOUT
+       ========================================= */
     body {
       margin: 0;
       padding: 0;
@@ -20,7 +22,9 @@
       overflow: hidden;
     }
 
-    /* --- Animations --- */
+    /* =========================================
+       2. ANIMATIONS
+       ========================================= */
     @keyframes fadeLeft {
       from {
         opacity: 0;
@@ -45,7 +49,9 @@
       }
     }
 
-    /* --- Global Elements --- */
+    /* =========================================
+       3. TOP NAVIGATION BAR (HEADER)
+       ========================================= */
     .main-header {
       background-color: #260044;
       width: 100%;
@@ -59,7 +65,7 @@
       z-index: 10;
     }
 
-    .logo {
+    .logo-text {
       font-family: Verdana;
       color: white;
       font-weight: bold;
@@ -67,7 +73,7 @@
       margin-left: 60px;
     }
 
-    .header-info {
+    .header-metadata {
       font-family: 'Segoe UI';
       color: white;
       display: flex;
@@ -75,8 +81,10 @@
       margin-right: 60px;
     }
 
-    /* --- Navigation --- */
-    .side-nav-container {
+    /* =========================================
+       4. SIDE NAVIGATION MENU
+       ========================================= */
+    .side-nav-wrapper {
       background-color: rgba(0, 0, 0, 0);
       width: 150px;
       height: 100%;
@@ -85,7 +93,7 @@
       align-items: center;
     }
 
-    .side-nav {
+    .side-nav-pill {
       display: grid;
       grid-template-rows: repeat(4, auto);
       gap: 20px;
@@ -98,14 +106,14 @@
       margin-top: 60px;
     }
 
-    .nav-item {
+    .nav-item-box {
       display: flex;
       flex-direction: column;
       align-items: center;
     }
 
-    .nav-btn {
-      background-color: #f4f4f4;
+    .nav-icon-btn,
+    .active-icon-btn {
       width: 40px;
       height: 40px;
       border-radius: 20px;
@@ -116,34 +124,41 @@
       align-items: center;
     }
 
-    .nav-btn img {
+    .nav-icon-btn {
+      background-color: #f4f4f4;
+    }
+
+    .active-icon-btn {
+      background-color: #ea2dff7c;
+      cursor: pointer;
+    }
+
+    .nav-icon-btn img,
+    .active-icon-btn img {
       width: 20px;
       height: 20px;
     }
 
-    .nav-btn:hover,
-    .link:hover .nav-btn {
+    .nav-icon-btn:hover,
+    .nav-link:hover .nav-icon-btn {
       background-color: #cdcdcd !important;
       cursor: pointer;
     }
 
-    .nav-label {
+    .nav-text-label {
       margin-top: 5px;
       font: .8em 'Segoe UI';
       color: #000000;
     }
 
-    .active-btn {
-      background-color: #e794f17c;
-      border: 2px solid rgb(157, 7, 180);
-    }
-
-    .active-label {
+    .active-text-label {
       color: #7030a0;
     }
 
-    /* --- Main Layout --- */
-    .main-content {
+    /* =========================================
+       5. MAIN CONTENT DASHBOARD
+       ========================================= */
+    .dashboard-grid {
       height: 600px;
       width: 78em;
       border-radius: 30px;
@@ -152,13 +167,12 @@
       display: grid;
       grid-template-columns: 500px 400px;
       grid-template-rows: 100px auto;
-      grid-template-areas: 'title title'
-        'pjct mastery';
+      grid-template-areas: 'title title' 'projects skills';
       align-items: center;
       justify-content: center;
     }
 
-    .title {
+    .section-headline {
       grid-area: title;
       display: flex;
       justify-content: center;
@@ -168,15 +182,17 @@
       animation-delay: .4s;
     }
 
-    .title h1 {
+    .section-headline h1 {
       font-family: 'Trebuchet MS';
       font-size: 2.8em;
       color: white;
     }
 
-    /* --- Projects Section --- */
-    .proj-container {
-      grid-area: pjct;
+    /* =========================================
+       6. PROJECTS SCROLLABLE AREA
+       ========================================= */
+    .projects-feed {
+      grid-area: projects;
       display: flex;
       flex-direction: column;
       row-gap: 20px;
@@ -188,21 +204,20 @@
       opacity: 0;
       animation: fadeRight .9s ease-out forwards;
       animation-delay: .8s;
-      direction: rtl;
     }
 
-    .proj-container::-webkit-scrollbar {
+    .projects-feed::-webkit-scrollbar {
       background-color: #260044;
       width: 20px;
       border-radius: 10px;
     }
 
-    .proj-container::-webkit-scrollbar-thumb {
+    .projects-feed::-webkit-scrollbar-thumb {
       background: white;
       border-radius: 10px;
     }
 
-    .container {
+    .project-card {
       flex-shrink: 0;
       width: 100%;
       height: 150px;
@@ -217,7 +232,7 @@
       box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
     }
 
-    .title-proj {
+    .project-thumbnail {
       position: absolute;
       width: 100%;
       height: 100%;
@@ -226,13 +241,13 @@
       align-items: center;
     }
 
-    .title-proj img {
+    .project-thumbnail img {
       width: 100%;
       height: 100%;
       transition: filter .2s ease-in-out;
     }
 
-    .info-proj {
+    .project-details-overlay {
       width: 100%;
       height: 100%;
       background-color: #ffffffa7;
@@ -248,15 +263,15 @@
       row-gap: 10px;
     }
 
-    .container:hover .info-proj {
+    .project-card:hover .project-details-overlay {
       bottom: 0;
     }
 
-    .container:hover .title-proj img {
+    .project-card:hover .project-thumbnail img {
       filter: blur(7px);
     }
 
-    .info-title {
+    .project-title-text {
       font-family: 'Segoe UI';
       font-size: 1.2em;
       font-weight: bold;
@@ -264,19 +279,19 @@
       margin: 0;
     }
 
-    .info-desc {
+    .project-description {
       font-family: Arial;
       font-size: .85em;
       text-align: center;
       margin: 5px 0;
     }
 
-    .btn-group {
+    .project-buttons {
       display: flex;
       gap: 10px;
     }
 
-    .action-btn {
+    .btn-action {
       height: 35px;
       border-radius: 15px;
       border: none;
@@ -285,9 +300,11 @@
       cursor: pointer;
     }
 
-    /* --- Mastery Section --- */
-    .mastery {
-      grid-area: mastery;
+    /* =========================================
+       7. MASTERY / SKILLS PANEL
+       ========================================= */
+    .skills-panel {
+      grid-area: skills;
       background-color: #7030a0;
       margin-left: 50px;
       height: 450px;
@@ -305,11 +322,10 @@
       animation-delay: 1s;
     }
 
-    .mastery h2 {
+    .skills-panel h2 {
       font-family: 'Trebuchet MS';
       color: white;
-      margin: 0px;
-      margin-bottom: 10px;
+      margin: 0 0 10px 0;
     }
 
     .skill-row {
@@ -317,11 +333,10 @@
       column-gap: 20px;
       align-items: center;
       width: 100%;
-      align-items: center;
       justify-content: center;
     }
 
-    .skill-icon {
+    .skill-icon-img {
       width: 40px;
       height: 40px;
       object-fit: contain;
@@ -347,148 +362,148 @@
 
 <body>
   <header class="main-header">
-    <div class="logo">
+    <div class="logo-text">
       <p>MKY.DEV</p>
     </div>
-    <div class="header-info">
+    <div class="header-metadata">
       <p><small>@IT FREE ELECTIVE</small></p>
       <p><small>BSIT 2-A</small></p>
     </div>
   </header>
 
-  <div class="side-nav-container">
-    <nav class="side-nav">
-      <div class="nav-item">
-        <a class="link" href="index.html"><button class="nav-btn"><img src="images/icons8-home-24.png"
+  <div class="side-nav-wrapper">
+    <nav class="side-nav-pill">
+      <div class="nav-item-box">
+        <a class="nav-link" href="index.html"><button class="nav-icon-btn"><img src="images/icons8-home-24.png"
               alt="home"></button></a>
-        <p class="nav-label">Home</p>
+        <p class="nav-text-label">Home</p>
       </div>
-      <div class="nav-item">
-        <a class="link" href="about_me.html"><button class="nav-btn"><img src="images/icons8-about-me-50.png"
+      <div class="nav-item-box">
+        <a class="nav-link" href="about_me.html"><button class="nav-icon-btn"><img src="images/icons8-about-me-50.png"
               alt="about"></button></a>
-        <p class="nav-label">About me</p>
+        <p class="nav-text-label">About me</p>
       </div>
-      <div class="nav-item">
-        <a class="link" href="contact.html"><button class="nav-btn"><img src="images/icons8-contact-30.png"
+      <div class="nav-item-box">
+        <a class="nav-link" href="contact.html"><button class="nav-icon-btn"><img src="images/icons8-contact-30.png"
               alt="contact"></button></a>
-        <p class="nav-label">Contacts</p>
+        <p class="nav-text-label">Contacts</p>
       </div>
-      <div class="nav-item">
-        <a class="link" href="project.html"><button class="nav-btn active-btn"><img src="images/icons8-project-48.png"
+      <div class="nav-item-box">
+        <a class="nav-link" href="project.html"><button class="active-icon-btn"><img src="images/icons8-project-48.png"
               alt="projects"></button></a>
-        <p class="nav-label active-label">Projects</p>
+        <p class="nav-text-label active-text-label">Projects</p>
       </div>
     </nav>
   </div>
 
-  <div class="main-content">
-    <div class="title">
+  <div class="dashboard-grid">
+    <div class="section-headline">
       <h1>PROJECTS</h1>
     </div>
 
-    <div class="proj-container">
-      <div class="container">
-        <div class="title-proj"><img src="images/calcu-project.png" alt="Calculator"></div>
-        <div class="info-proj">
-          <p class="info-title">CALCULATOR</p>
-          <p class="info-desc">Basic calculator with EMDAS hierarchy. Built with HTML, CSS, and JS.</p>
-          <div class="btn-group">
-            <a href="https://paulomarcky.github.io/Calcu/"><button class="action-btn"
+    <div class="projects-feed">
+      <div class="project-card">
+        <div class="project-thumbnail"><img src="images/calcu-project.png" alt="Calculator"></div>
+        <div class="project-details-overlay">
+          <p class="project-title-text">CALCULATOR</p>
+          <p class="project-description">Basic calculator with EMDAS hierarchy. Built with HTML, CSS, and JS.</p>
+          <div class="project-buttons">
+            <a href="https://paulomarcky.github.io/Calcu/"><button class="btn-action"
                 style="background-color: rgb(97, 255, 97);">👁 VIEW CODE</button></a>
-            <button class="action-btn" style="background-color: rgb(255, 97, 97);">▶︎ LIVE VIEW</button>
+            <button class="btn-action" style="background-color: rgb(255, 97, 97);">▶︎ LIVE VIEW</button>
           </div>
         </div>
       </div>
 
-      <div class="container">
-        <div class="title-proj"><img src="images/to-do-list-project.png" alt="To Do List"></div>
-        <div class="info-proj">
-          <p class="info-title">TO DO LIST</p>
-          <p class="info-desc">Infinite task entry with date setting and deletion. HTML, CSS, JS.</p>
-          <div class="btn-group">
-            <button class="action-btn" style="background-color: rgb(97, 255, 97);">👁 VIEW CODE</button>
-            <button class="action-btn" style="background-color: rgb(255, 97, 97);">▶︎ LIVE VIEW</button>
+      <div class="project-card">
+        <div class="project-thumbnail"><img src="images/to-do-list-project.png" alt="To Do List"></div>
+        <div class="project-details-overlay">
+          <p class="project-title-text">TO DO LIST</p>
+          <p class="project-description">Infinite task entry with date setting and deletion. HTML, CSS, JS.</p>
+          <div class="project-buttons">
+            <button class="btn-action" style="background-color: rgb(97, 255, 97);">👁 VIEW CODE</button>
+            <button class="btn-action" style="background-color: rgb(255, 97, 97);">▶︎ LIVE VIEW</button>
           </div>
         </div>
       </div>
 
-      <div class="container">
-        <div class="title-proj"><img src="images/fitness-web-project.png" alt="Fitness"></div>
-        <div class="info-proj">
-          <p class="info-title">FITNESS WEBSITE</p>
-          <p class="info-desc">Health tracking and workout schedules. Built with HTML, CSS, and JS.</p>
-          <div class="btn-group">
-            <button class="action-btn" style="background-color: rgb(97, 255, 97);">👁 VIEW CODE</button>
-            <button class="action-btn" style="background-color: rgb(255, 97, 97);">▶︎ LIVE VIEW</button>
+      <div class="project-card">
+        <div class="project-thumbnail"><img src="images/fitness-web-project.png" alt="Fitness"></div>
+        <div class="project-details-overlay">
+          <p class="project-title-text">FITNESS WEBSITE</p>
+          <p class="project-description">Health tracking and workout schedules. Built with HTML, CSS, and JS.</p>
+          <div class="project-buttons">
+            <button class="btn-action" style="background-color: rgb(97, 255, 97);">👁 VIEW CODE</button>
+            <button class="btn-action" style="background-color: rgb(255, 97, 97);">▶︎ LIVE VIEW</button>
           </div>
         </div>
       </div>
 
-      <div class="container">
-        <div class="title-proj"><img src="images/guess-number-game.png" alt="Guess Game"></div>
-        <div class="info-proj">
-          <p class="info-title">GUESSING GAME</p>
-          <p class="info-desc">Interactive number guessing game with feedback loops. HTML, CSS, JS.</p>
-          <div class="btn-group">
-            <button class="action-btn" style="background-color: rgb(97, 255, 97);">👁 VIEW CODE</button>
-            <button class="action-btn" style="background-color: rgb(255, 97, 97);">▶︎ LIVE VIEW</button>
+      <div class="project-card">
+        <div class="project-thumbnail"><img src="images/guess-number-game.png" alt="Guess Game"></div>
+        <div class="project-details-overlay">
+          <p class="project-title-text">GUESSING GAME</p>
+          <p class="project-description">Interactive number guessing game with feedback loops. HTML, CSS, JS.</p>
+          <div class="project-buttons">
+            <button class="btn-action" style="background-color: rgb(97, 255, 97);">👁 VIEW CODE</button>
+            <button class="btn-action" style="background-color: rgb(255, 97, 97);">▶︎ LIVE VIEW</button>
           </div>
         </div>
       </div>
 
-      <div class="container">
-        <div class="title-proj"><img src="images/prayer-book-project.png" alt="Prayer Book"></div>
-        <div class="info-proj">
-          <p class="info-title">PRAYER BOOK</p>
-          <p class="info-desc">Digital collection of prayers with categories. HTML, CSS, JS.</p>
-          <div class="btn-group">
-            <button class="action-btn" style="background-color: rgb(97, 255, 97);">👁 VIEW CODE</button>
-            <button class="action-btn" style="background-color: rgb(255, 97, 97);">▶︎ LIVE VIEW</button>
+      <div class="project-card">
+        <div class="project-thumbnail"><img src="images/prayer-book-project.png" alt="Prayer Book"></div>
+        <div class="project-details-overlay">
+          <p class="project-title-text">PRAYER BOOK</p>
+          <p class="project-description">Digital collection of prayers with categories. HTML, CSS, JS.</p>
+          <div class="project-buttons">
+            <button class="btn-action" style="background-color: rgb(97, 255, 97);">👁 VIEW CODE</button>
+            <button class="btn-action" style="background-color: rgb(255, 97, 97);">▶︎ LIVE VIEW</button>
           </div>
         </div>
       </div>
 
-      <div class="container">
-        <div class="title-proj"><img src="images/tuition-system.png" alt="Tuition"></div>
-        <div class="info-proj">
-          <p class="info-title">TUITION SYSTEM</p>
-          <p class="info-desc">Command-line based management for tuition records. HTML, CSS, JS.</p>
-          <div class="btn-group">
-            <button class="action-btn" style="background-color: rgb(97, 255, 97);">👁 VIEW CODE</button>
-            <button class="action-btn" style="background-color: rgb(255, 97, 97);">▶︎ LIVE VIEW</button>
+      <div class="project-card">
+        <div class="project-thumbnail"><img src="images/tuition-system.png" alt="Tuition"></div>
+        <div class="project-details-overlay">
+          <p class="project-title-text">TUITION SYSTEM</p>
+          <p class="project-description">Command-line based management for tuition records. HTML, CSS, JS.</p>
+          <div class="project-buttons">
+            <button class="btn-action" style="background-color: rgb(97, 255, 97);">👁 VIEW CODE</button>
+            <button class="btn-action" style="background-color: rgb(255, 97, 97);">▶︎ LIVE VIEW</button>
           </div>
         </div>
       </div>
     </div>
 
-    <div class="mastery">
+    <div class="skills-panel">
       <h2>MASTERY LEVEL</h2>
       <div class="skill-row">
-        <img class="skill-icon" src="images/html.png" alt="HTML">
+        <img class="skill-icon-img" src="images/html.png" alt="HTML">
         <progress value="70" max="100"></progress>
       </div>
       <div class="skill-row">
-        <img class="skill-icon" src="images/css.png" alt="CSS">
+        <img class="skill-icon-img" src="images/css.png" alt="CSS">
         <progress value="80" max="100"></progress>
       </div>
       <div class="skill-row">
-        <img class="skill-icon" src="images/javascript.png" alt="JS">
+        <img class="skill-icon-img" src="images/javascript.png" alt="JS">
         <progress value="60" max="100"></progress>
       </div>
       <div class="skill-row">
-        <img class="skill-icon" src="images/java.png" alt="Java">
+        <img class="skill-icon-img" src="images/java.png" alt="Java">
         <progress value="40" max="100"></progress>
       </div>
       <div class="skill-row">
-        <img class="skill-icon" src="images/python.png" alt="Python">
+        <img class="skill-icon-img" src="images/python.png" alt="Python">
         <progress value="60" max="100"></progress>
       </div>
       <div class="skill-row">
-        <img class="skill-icon" src="images/c++.png" alt="C++">
+        <img class="skill-icon-img" src="images/c++.png" alt="C++">
         <progress value="30" max="100"></progress>
       </div>
       <div class="skill-row">
-        <img class="skill-icon" src="images/mySQL.png" alt="MySQL">
+        <img class="skill-icon-img" src="images/mySQL.png" alt="MySQL">
         <progress value="50" max="100"></progress>
       </div>
     </div>

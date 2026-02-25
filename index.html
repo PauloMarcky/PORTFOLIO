@@ -6,6 +6,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Hello There :]</title>
   <style>
+    /* =========================================
+       1. GLOBAL & BASE STYLES
+       ========================================= */
     html {
       scroll-behavior: smooth;
     }
@@ -23,6 +26,9 @@
       overflow-x: hidden;
     }
 
+    /* =========================================
+       2. ANIMATIONS
+       ========================================= */
     @keyframes fadeLeft {
       from {
         opacity: 0;
@@ -48,17 +54,25 @@
     }
 
     @keyframes pop-up {
-      from {
-        opacity: 0;
-        transform: scale(80%);
+      0% {
+        opacity: 1;
+        transform: scale(0);
       }
 
-      to {
+      60% {
         opacity: 1;
-        transform: scale(100%);
+        transform: scale(1.05);
+      }
+
+      100% {
+        opacity: 1;
+        transform: translateY(1);
       }
     }
 
+    /* =========================================
+       3. TOP NAVIGATION BAR (HEADER)
+       ========================================= */
     .top-header {
       background-color: #260044;
       width: 100%;
@@ -88,6 +102,9 @@
       margin-right: 60px;
     }
 
+    /* =========================================
+       4. SIDE NAVIGATION MENU
+       ========================================= */
     .side-nav-container {
       background-color: transparent;
       padding: 0;
@@ -98,7 +115,7 @@
       align-items: center;
     }
 
-    nav {
+    .side-nav-pill {
       display: grid;
       grid-template-rows: repeat(4, auto);
       gap: 20px;
@@ -140,16 +157,32 @@
       height: 20px;
     }
 
-    .btn-home {
-      background-color: #e794f17c;
-      border: 2px solid rgb(157, 7, 180);
+    .btn-active-home img {
+      width: 20px;
+      height: 20px;
+    }
+
+    .btn-active-home {
+      background-color: #ea2dff7c;
+      width: 40px;
+      height: 40px;
+      border-radius: 20px;
+      border: 0;
+      transition: ease-out .1s;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
     }
 
     .link:hover .nav-btn {
       background-color: #cdcdcd !important;
     }
 
-    .container {
+    /* =========================================
+       5. HERO SHOWCASE (MAIN CONTENT)
+       ========================================= */
+    .hero-showcase {
       background-color: hsla(288, 71%, 89%, 0.463);
       height: 550px;
       width: 78em;
@@ -168,48 +201,48 @@
       align-items: center;
       justify-content: center;
       margin-top: 50px;
-      animation: pop-up .6s ease-in-out forwards;
-      animation-delay: .4s;
+      animation: pop-up .8s ease-in-out forwards;
+      animation-delay: .3s;
       opacity: 0;
     }
 
-    .intro {
+    .name-intro {
       grid-area: name;
       opacity: 0;
       animation: fadeRight 1s ease-out forwards;
-      animation-delay: 1s;
+      animation-delay: 1.2s;
     }
 
-    .intro h1 {
+    .name-intro h1 {
       color: white;
       font-size: 5em;
       font-family: 'Trebuchet MS';
       margin: 0;
     }
 
-    .sub-intro {
+    .expertise-sub-intro {
       grid-area: expertise;
       opacity: 0;
       animation: fadeRight 1s ease-out forwards;
-      animation-delay: 1.2s;
+      animation-delay: 1.4s;
     }
 
-    .sub-intro h4 {
+    .expertise-sub-intro h4 {
       color: rgb(24, 24, 24);
       font-size: 2em;
       font-family: 'Arial';
       margin: 0;
     }
 
-    .view-project-btn {
+    .cta-button-box {
       grid-area: view-projects;
       justify-self: center;
       opacity: 0;
       animation: fadeRight 1s ease-out forwards;
-      animation-delay: 1.4s;
+      animation-delay: 1.6s;
     }
 
-    .view-project-btn button {
+    .cta-button-box button {
       width: 220px;
       height: 50px;
       border-radius: 18px;
@@ -222,11 +255,11 @@
       transition: ease-out .1s;
     }
 
-    .profile-area {
+    .profile-image-area {
       grid-area: profile-pic;
     }
 
-    .profile {
+    .profile-image {
       width: 100%;
       height: 100%;
       object-fit: cover;
@@ -234,7 +267,7 @@
       object-position: 50% 15%;
       opacity: 0;
       animation: fadeLeft 1s ease-out forwards;
-      animation-delay: 1.6s;
+      animation-delay: 1.8s;
     }
   </style>
 </head>
@@ -252,10 +285,10 @@
   </header>
 
   <header class="side-nav-container">
-    <nav>
+    <nav class="side-nav-pill">
       <div class="nav-item">
         <a class="link" href="index.html">
-          <button class="nav-btn btn-home"><img src="images/icons8-home-24.png" alt="home"></button>
+          <button class="btn-active-home"><img src="images/icons8-home-24.png" alt="home"></button>
         </a>
         <p style="color: #7030a0;">Home</p>
       </div>
@@ -280,18 +313,18 @@
     </nav>
   </header>
 
-  <div class="container">
-    <div class="intro">
+  <div class="hero-showcase">
+    <div class="name-intro">
       <h1>Hello, I'm Marcky <br> Paulo Balaba</h1>
     </div>
-    <div class="sub-intro">
+    <div class="expertise-sub-intro">
       <h4>UI/UX Designer & Full Stack Developer</h4>
     </div>
-    <div class="view-project-btn">
-      <button><b>View My Projects</b></button>
+    <div class="cta-button-box">
+      <a href="project.html"><button><b>View My Projects</b></button></a>
     </div>
-    <div class="profile-area">
-      <img class="profile" src="images/profile.png" alt="Profile Picture">
+    <div class="profile-image-area">
+      <img class="profile-image" src="images/profile.png" alt="Profile Picture">
     </div>
   </div>
 

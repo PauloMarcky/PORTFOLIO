@@ -6,7 +6,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Hello There :]</title>
   <style>
-    /* Global & Body Styles */
+    /* =========================================
+       1. GLOBAL & BODY STYLES
+       ========================================= */
     html {
       scroll-behavior: smooth;
     }
@@ -24,7 +26,9 @@
       overflow-x: hidden;
     }
 
-    /* Keyframes */
+    /* =========================================
+       2. KEYFRAMES (ANIMATIONS)
+       ========================================= */
     @keyframes fadeRight {
       from {
         opacity: 0;
@@ -49,7 +53,26 @@
       }
     }
 
-    /* Top Navigation Header */
+    @keyframes pop-up {
+      0% {
+        opacity: 1;
+        transform: scale(0);
+      }
+
+      60% {
+        opacity: 1;
+        transform: scale(1.1);
+      }
+
+      100% {
+        opacity: 1;
+        transform: translateY(1);
+      }
+    }
+
+    /* =========================================
+       3. TOP NAVIGATION HEADER
+       ========================================= */
     .top-header {
       background-color: #260044;
       width: 100%;
@@ -63,7 +86,7 @@
       z-index: 100;
     }
 
-    .logo {
+    .brand-logo {
       font-family: Verdana;
       color: white;
       font-weight: bold;
@@ -71,7 +94,7 @@
       margin-left: 60px;
     }
 
-    .header-sub {
+    .header-metadata {
       font-family: 'Segoe UI';
       color: white;
       display: flex;
@@ -79,7 +102,9 @@
       margin-right: 60px;
     }
 
-    /* Side Navigation */
+    /* =========================================
+       4. SIDE NAVIGATION
+       ========================================= */
     .side-nav-area {
       background-color: transparent;
       width: 150px;
@@ -89,7 +114,7 @@
       align-items: center;
     }
 
-    nav {
+    .side-nav-pill {
       display: grid;
       grid-template-rows: repeat(4, auto);
       gap: 20px;
@@ -126,9 +151,22 @@
       height: 20px;
     }
 
+    .nav-btn-active img {
+      width: 20px;
+      height: 20px;
+    }
+
     .nav-btn-active {
-      background-color: #e794f17c;
-      border: 2px solid rgb(157, 7, 180);
+      background-color: #ea2dff7c;
+      width: 40px;
+      height: 40px;
+      border-radius: 20px;
+      border: 0;
+      transition: ease-out .1s;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
     }
 
     .nav-item p {
@@ -137,12 +175,14 @@
       color: #000000;
     }
 
-    .link:hover .nav-btn {
+    .nav-link:hover .nav-btn {
       background-color: #cdcdcd !important;
     }
 
-    /* Main Content Layout */
-    .about-container {
+    /* =========================================
+       5. ABOUT CONTENT LAYOUT
+       ========================================= */
+    .about-main-grid {
       height: 500px;
       width: 78em;
       display: grid;
@@ -157,13 +197,13 @@
       margin-top: 20px;
     }
 
-    .profile-wrap {
+    .profile-image-wrap {
       grid-area: image;
       border-radius: 20px;
       overflow: hidden;
     }
 
-    .profile {
+    .profile-pic {
       display: flex;
       object-fit: cover;
       width: 100%;
@@ -174,7 +214,7 @@
       animation-delay: .4s;
     }
 
-    .content-wrap {
+    .text-content-wrap {
       grid-area: about-me;
       border-radius: 20px;
       display: flex;
@@ -183,13 +223,13 @@
       margin-left: 10px;
     }
 
-    .about-text {
+    .about-heading-box {
       opacity: 0;
       animation: fadeLeft .8s ease-out forwards;
       animation-delay: 1.2s;
     }
 
-    .about-text h1 {
+    .about-heading-box h1 {
       text-align: left;
       color: #ffffff;
       font-family: 'Trebuchet MS';
@@ -199,7 +239,7 @@
       font-weight: bold;
     }
 
-    .about-text h2 {
+    .about-heading-box h2 {
       text-align: left;
       color: #260044;
       font-family: 'Arial';
@@ -209,14 +249,14 @@
       font-weight: bold;
     }
 
-    #info {
+    .biography-section {
       opacity: 0;
       animation: fadeLeft .8s ease-out forwards;
       animation-delay: 1.6s;
       text-align: justify;
     }
 
-    #info h2 {
+    .biography-section h2 {
       color: #ffffff;
       font-family: 'Segoe UI';
       font-weight: 400;
@@ -225,19 +265,38 @@
       line-height: 1.4;
     }
 
-    #soc_med {
-      opacity: 0;
-      animation: fadeLeft .8s ease-out forwards;
-      animation-delay: 2s;
+    /* =========================================
+       6. SOCIAL MEDIA SECTION
+       ========================================= */
+    .social-links-area {
       display: flex;
       flex-direction: row;
       margin-top: 20px;
       gap: 10px;
     }
 
-    .social-icon {
+    .social-icon-img {
       width: 40px;
       height: 40px;
+      opacity: 0;
+      animation: pop-up .8s ease-out forwards;
+    }
+
+    /* Staggered animation delays for social icons */
+    .fb-anim {
+      animation-delay: 2s;
+    }
+
+    .gh-anim {
+      animation-delay: 2.2s;
+    }
+
+    .ig-anim {
+      animation-delay: 2.4s;
+    }
+
+    .tg-anim {
+      animation-delay: 2.6s;
     }
   </style>
 </head>
@@ -245,79 +304,79 @@
 <body>
 
   <header class="top-header">
-    <div class="logo">
+    <div class="brand-logo">
       <p>MKY.DEV</p>
     </div>
-    <div class="header-sub">
+    <div class="header-metadata">
       <p><small>@IT FREE ELECTIVE</small></p>
       <p><small>BSIT 2-A</small></p>
     </div>
   </header>
 
-  <header class="side-nav-area">
-    <nav>
+  <div class="side-nav-area">
+    <nav class="side-nav-pill">
       <div class="nav-item">
-        <a class="link" href="index.html">
+        <a class="nav-link" href="index.html">
           <button class="nav-btn"><img src="images/icons8-home-24.png" alt="home"></button>
         </a>
         <p>Home</p>
       </div>
       <div class="nav-item">
-        <a class="link" href="about_me.html">
-          <button class="nav-btn nav-btn-active"><img src="images/icons8-about-me-50.png" alt="about"></button>
+        <a class="nav-link" href="about_me.html">
+          <button class="nav-btn-active"><img src="images/icons8-about-me-50.png" alt="about"></button>
         </a>
         <p style="color: #7030a0;">About me</p>
       </div>
       <div class="nav-item">
-        <a class="link" href="contact.html">
+        <a class="nav-link" href="contact.html">
           <button class="nav-btn"><img src="images/icons8-contact-30.png" alt="contact"></button>
         </a>
         <p>Contacts</p>
       </div>
       <div class="nav-item">
-        <a class="link" href="project.html">
+        <a class="nav-link" href="project.html">
           <button class="nav-btn"><img src="images/icons8-project-48.png" alt="projects"></button>
         </a>
         <p>Projects</p>
       </div>
     </nav>
-  </header>
+  </div>
 
-  <div class="about-container">
-    <div class="profile-wrap">
-      <img class="profile" src="images/profile.png" alt="Profile Picture">
+  <div class="about-main-grid">
+    <div class="profile-image-wrap">
+      <img class="profile-pic" src="images/profile.png" alt="Profile Picture">
     </div>
 
-    <div class="content-wrap">
-      <div class="about-text">
+    <div class="text-content-wrap">
+      <div class="about-heading-box">
         <h1>ABOUT ME</h1>
         <h2>Marcky Paulo Balaba (Pau-pau)</h2>
       </div>
 
-      <div id="info">
+      <div class="biography-section">
         <h2>
           Dedicated Information Technology graduate with a passion of learning and having practical experience
           in system development, web design, and IT support. Developed technical skills through personal projects,
           academic work, and real-world exposures. I am willing to
           learn contentiously in a dynamic IT environment. <br><br>
           I have a solid foundation in programming particularly in Java, JavaScript, and Web Development Tools which has
-          strengthened my ability to approach challenges with logical thinking, creativity, and a continuous learning
+          strengthen my ability to approach challenges with logical thinking, creativity, and a continuous learning
           mindset. I enjoy working with teams, sharing insights, and contributing to building solutions.
         </h2>
       </div>
 
-      <div id="soc_med">
+      <div class="social-links-area">
         <a href="https://www.facebook.com/MARCKYBALABAPANGET" target="_blank">
-          <img src="images/fb_clear.png" class="social-icon" alt="Facebook">
+          <img src="images/fb_clear.png" class="social-icon-img fb-anim" alt="Facebook">
         </a>
         <a href="https://github.com/PauloMarcky" target="_blank">
-          <img src="images/github_clear.png" class="social-icon" alt="GitHub">
+          <img src="images/github_clear.png" class="social-icon-img gh-anim" alt="GitHub">
         </a>
         <a href="https://www.instagram.com/marcky_balaba/" target="_blank">
-          <img src="images/insta_clear.png" class="social-icon" alt="Instagram">
+          <img src="images/insta_clear.png" class="social-icon-img ig-anim" alt="Instagram">
         </a>
         <a href="#" target="_blank">
-          <img src="images/tele_clear.png" class="social-icon" alt="Telegram">
+          <img src="images/tele_clear.png" class="social-icon-img tg-anim" alt="Telegram">
         </a>
       </div>
     </div>

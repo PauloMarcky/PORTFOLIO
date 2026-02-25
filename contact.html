@@ -6,6 +6,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Hello There :]</title>
   <style>
+    /* =========================================
+       1. GLOBAL & BODY STYLES
+       ========================================= */
     body {
       margin: 0;
       padding: 0;
@@ -19,6 +22,9 @@
       overflow-x: hidden;
     }
 
+    /* =========================================
+       2. ANIMATIONS
+       ========================================= */
     @keyframes fadeLeft {
       from {
         opacity: 0;
@@ -43,6 +49,9 @@
       }
     }
 
+    /* =========================================
+       3. TOP NAVIGATION HEADER
+       ========================================= */
     .top-header {
       background-color: #260044;
       width: 100%;
@@ -56,7 +65,7 @@
       z-index: 100;
     }
 
-    .logo {
+    .brand-logo {
       font-family: Verdana;
       color: white;
       font-weight: bold;
@@ -64,7 +73,7 @@
       margin-left: 60px;
     }
 
-    .header-sub {
+    .header-metadata {
       font-family: 'Segoe UI';
       color: white;
       display: flex;
@@ -72,6 +81,9 @@
       margin-right: 60px;
     }
 
+    /* =========================================
+       4. SIDE NAVIGATION
+       ========================================= */
     .side-nav-area {
       background-color: transparent;
       width: 150px;
@@ -81,7 +93,7 @@
       align-items: center;
     }
 
-    nav {
+    .side-nav-pill {
       display: grid;
       grid-template-rows: repeat(4, auto);
       gap: 20px;
@@ -100,8 +112,7 @@
       align-items: center;
     }
 
-    .nav-btn,
-    .nav-btn-main {
+    .nav-btn {
       width: 40px;
       height: 40px;
       border-radius: 20px;
@@ -116,13 +127,24 @@
       border: 0;
     }
 
-    .nav-btn-main {
-      background-color: #e794f17c;
-      border: 2px solid rgb(157, 7, 180);
+    .nav-btn-active:hover {
+      cursor: pointer;
+    }
+
+    .nav-btn-active {
+      background-color: #ea2dff7c;
+      width: 40px;
+      height: 40px;
+      border-radius: 20px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: ease-out .1s;
+      border: 0;
     }
 
     .nav-btn img,
-    .nav-btn-main img {
+    .nav-btn-active img {
       width: 20px;
       height: 20px;
     }
@@ -132,16 +154,15 @@
       font: .8em 'Segoe UI';
     }
 
-    .link:hover .nav-btn,
-    .link:hover .nav-btn-main {
+    .link:hover .nav-btn {
+      background-color: #cdcdcd !important;
       cursor: pointer;
     }
 
-    .link:hover .nav-btn {
-      background-color: #cdcdcd !important;
-    }
-
-    .container {
+    /* =========================================
+       5. CONTACT SECTION LAYOUT
+       ========================================= */
+    .contact-card-wrapper {
       height: 450px;
       width: 78em;
       border-radius: 30px;
@@ -156,7 +177,8 @@
       justify-content: center;
     }
 
-    .contact-info-panel {
+    /* Left Panel: Info */
+    .info-display-panel {
       grid-area: contact;
       background-color: hsla(288, 71%, 89%, 0.463);
       border-radius: 40px 0 0 40px;
@@ -169,8 +191,8 @@
       animation-delay: .3s;
     }
 
-    .contact-info-panel h3 {
-      color: white;
+    .info-display-panel h3 {
+      color: #260044;
       font-size: 2em;
       font-family: 'Trebuchet MS';
       padding-left: 30px;
@@ -178,7 +200,7 @@
       font-weight: 500;
     }
 
-    .contact-info-panel .subtitle {
+    .info-display-panel .subtitle {
       color: #260044;
       font-family: 'Segoe UI';
       padding-left: 30px;
@@ -187,7 +209,8 @@
       font-weight: 100;
     }
 
-    .details-grid {
+    /* Grid for Phone, Email, Location */
+    .contact-details-list {
       display: grid;
       grid-template-columns: 50px 1fr;
       grid-template-rows: repeat(3, 60px);
@@ -199,18 +222,19 @@
       align-items: center;
     }
 
-    .details-grid img {
-      width: 23px;
-      height: 23px;
+    .contact-details-list img {
+      width: 28px;
+      height: 28px;
       object-fit: cover;
     }
 
-    .details-grid div {
+    .contact-details-list div {
       font-family: 'Segoe UI';
-      color: #000000;
+      color: #260044;
     }
 
-    .message-form-panel {
+    /* Right Panel: Form */
+    .contact-form-panel {
       grid-area: message;
       background-color: #ffffff;
       border-radius: 0 20px 20px 0;
@@ -230,7 +254,7 @@
       animation-delay: .3s;
     }
 
-    .form-title h3 {
+    .form-header-box h3 {
       margin: 5px;
       font-size: 2em;
       font-family: 'Trebuchet MS';
@@ -239,7 +263,7 @@
       text-align: center;
     }
 
-    .form-title p {
+    .form-header-box p {
       color: #260044;
       font-family: 'Segoe UI';
       margin: 0 0 10px 0;
@@ -248,7 +272,8 @@
       text-align: center;
     }
 
-    .input-field {
+    /* Input Styling */
+    .form-input {
       width: 250px;
       height: 30px;
       border: none;
@@ -258,13 +283,7 @@
       margin-top: 50px;
     }
 
-    .input-field:focus,
-    .textarea-field:focus {
-      outline: none;
-      border-bottom: 2px solid #7030a0;
-    }
-
-    .textarea-field {
+    .form-textarea {
       width: 560px;
       height: 100px;
       resize: none;
@@ -275,7 +294,13 @@
       margin-top: 20px;
     }
 
-    .send-btn {
+    .form-input:focus,
+    .form-textarea:focus {
+      outline: none;
+      border-bottom: 2px solid #7030a0;
+    }
+
+    .submit-btn {
       width: 200px;
       height: 50px;
       background-color: #9b59d0;
@@ -283,13 +308,13 @@
       border-radius: 5px;
       color: white;
       font-weight: 400;
-      font-family: 'Trebuchet MS';
-      font-size: 1.3em;
+      font-family: 'Arial';
+      font-size: 1.1em;
       cursor: pointer;
       transition: ease-out .1s;
     }
 
-    .send-btn:hover {
+    .submit-btn:hover {
       background-color: #7030a0;
     }
   </style>
@@ -298,17 +323,17 @@
 <body>
 
   <header class="top-header">
-    <div class="logo">
+    <div class="brand-logo">
       <p>MKY.DEV</p>
     </div>
-    <div class="header-sub">
+    <div class="header-metadata">
       <p><small>@IT FREE ELECTIVE</small></p>
       <p><small>BSIT 2-A</small></p>
     </div>
   </header>
 
   <header class="side-nav-area">
-    <nav>
+    <nav class="side-nav-pill">
       <div class="nav-item">
         <a class="link" href="index.html">
           <button class="nav-btn"><img src="images/icons8-home-24.png" alt="home"></button>
@@ -323,7 +348,7 @@
       </div>
       <div class="nav-item">
         <a class="link" href="contact.html">
-          <button class="nav-btn-main"><img src="images/icons8-contact-30.png" alt="contact"></button>
+          <button class="nav-btn-active"><img src="images/icons8-contact-30.png" alt="contact"></button>
         </a>
         <p style="color: #7030a0;">Contacts</p>
       </div>
@@ -336,43 +361,43 @@
     </nav>
   </header>
 
-  <div class="container">
-    <div class="contact-info-panel">
+  <div class="contact-card-wrapper">
+    <div class="info-display-panel">
       <h3>CONTACT INFORMATION</h3>
       <p class="subtitle">Please don't make unnecessary contacts!</p>
 
-      <div class="details-grid">
-        <div style="grid-area: phone-img;"><img src="images/white-phone.png" alt="phone"></div>
+      <div class="contact-details-list">
+        <div style="grid-area: phone-img;"><img src="images/phone.png" alt="phone"></div>
         <div style="grid-area: phone;">+63 948 9928 125</div>
 
-        <div style="grid-area: email-img;"><img src="images/white-email.png" alt="email"></div>
+        <div style="grid-area: email-img;"><img src="images/email.png" alt="email"></div>
         <div style="grid-area: email;">paulobalaba5@gmail.com</div>
 
-        <div style="grid-area: location-img;"><img src="images/white-location.png" alt="location"></div>
+        <div style="grid-area: location-img;"><img src="images/location.png" alt="location"></div>
         <div style="grid-area: location;">Purok 7, Bugallong Norte, Ramon Isabela</div>
       </div>
     </div>
 
-    <div class="message-form-panel">
-      <div class="form-title" style="grid-area: title;">
+    <div class="contact-form-panel">
+      <div class="form-header-box" style="grid-area: title;">
         <h3>GET IN TOUCH</h3>
         <p>Please follow the format below!</p>
       </div>
 
       <div style="grid-area: name;">
-        <input class="input-field" placeholder="Enter Name" type="text">
+        <input class="form-input" placeholder="Enter Name" type="text">
       </div>
 
       <div style="grid-area: email;">
-        <input class="input-field" placeholder="Enter Email" type="email">
+        <input class="form-input" placeholder="Enter Email" type="email">
       </div>
 
       <div style="grid-area: mess;">
-        <textarea class="textarea-field" placeholder="Type message here...."></textarea>
+        <textarea class="form-textarea" placeholder="Type message here...."></textarea>
       </div>
 
       <div style="grid-area: send;">
-        <button class="send-btn">Send Message</button>
+        <button class="submit-btn">Send Message</button>
       </div>
     </div>
   </div>
