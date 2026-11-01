@@ -27,51 +27,7 @@
     }
 
     /* =========================================
-       2. ANIMATIONS
-       ========================================= */
-    @keyframes fadeLeft {
-      from {
-        opacity: 0;
-        transform: translateX(40px);
-      }
-
-      to {
-        opacity: 1;
-        transform: translateX(0px);
-      }
-    }
-
-    @keyframes fadeRight {
-      from {
-        opacity: 0;
-        transform: translateX(-40px);
-      }
-
-      to {
-        opacity: 1;
-        transform: translateX(0px);
-      }
-    }
-
-    @keyframes pop-up {
-      0% {
-        opacity: 0;
-        transform: scale(0);
-      }
-
-      60% {
-        opacity: 1;
-        transform: scale(1.05);
-      }
-
-      100% {
-        opacity: 1;
-        transform: translateY(1);
-      }
-    }
-
-    /* =========================================
-       3. TOP NAVIGATION BAR (HEADER)
+      2. TOP NAVIGATION BAR (HEADER)
        ========================================= */
     .top-header {
       background-color: #260044;
@@ -103,7 +59,7 @@
     }
 
     /* =========================================
-       4. SIDE NAVIGATION MENU
+       3. SIDE NAVIGATION MENU
        ========================================= */
     .side-nav-container {
       background-color: transparent;
@@ -180,7 +136,7 @@
     }
 
     /* =========================================
-       5. HERO SHOWCASE (MAIN CONTENT)
+       4. HERO SHOWCASE (MAIN CONTENT)
        ========================================= */
     .hero-showcase {
       background-color: hsla(288, 71%, 89%, 0.463);
@@ -201,16 +157,10 @@
       align-items: center;
       justify-content: center;
       margin-top: 50px;
-      animation: pop-up .8s ease-in-out forwards;
-      animation-delay: .3s;
-      opacity: 0;
     }
 
     .name-intro {
       grid-area: name;
-      opacity: 0;
-      animation: fadeRight 1s ease-out forwards;
-      animation-delay: 1.2s;
     }
 
     .name-intro h1 {
@@ -222,9 +172,6 @@
 
     .expertise-sub-intro {
       grid-area: expertise;
-      opacity: 0;
-      animation: fadeRight 1s ease-out forwards;
-      animation-delay: 1.4s;
     }
 
     .expertise-sub-intro h4 {
@@ -237,9 +184,6 @@
     .cta-button-box {
       grid-area: view-projects;
       justify-self: center;
-      opacity: 0;
-      animation: fadeRight 1s ease-out forwards;
-      animation-delay: 1.6s;
     }
 
     .cta-button-box:hover button {
@@ -269,9 +213,6 @@
       object-fit: cover;
       border-radius: 30px;
       object-position: 50% 15%;
-      opacity: 0;
-      animation: fadeLeft 1s ease-out forwards;
-      animation-delay: 1.8s;
     }
   </style>
 </head>
@@ -281,10 +222,6 @@
   <header class="top-header">
     <div class="logo-text">
       <p>MKY.DEV</p>
-    </div>
-    <div class="header-info">
-      <p><small>@IT FREE ELECTIVE</small></p>
-      <p><small>BSIT 2-A</small></p>
     </div>
   </header>
 

@@ -23,33 +23,6 @@
     }
 
     /* =========================================
-       2. ANIMATIONS
-       ========================================= */
-    @keyframes fadeLeft {
-      from {
-        opacity: 0;
-        transform: translateX(40px);
-      }
-
-      to {
-        opacity: 1;
-        transform: translateX(0px);
-      }
-    }
-
-    @keyframes fadeRight {
-      from {
-        opacity: 0;
-        transform: translateX(-40px);
-      }
-
-      to {
-        opacity: 1;
-        transform: translateX(0px);
-      }
-    }
-
-    /* =========================================
        3. TOP NAVIGATION BAR (HEADER)
        ========================================= */
     .main-header {
@@ -82,7 +55,7 @@
     }
 
     /* =========================================
-       4. SIDE NAVIGATION MENU
+       3. SIDE NAVIGATION MENU
        ========================================= */
     .side-nav-wrapper {
       background-color: rgba(0, 0, 0, 0);
@@ -156,7 +129,7 @@
     }
 
     /* =========================================
-       5. MAIN CONTENT DASHBOARD
+       4. MAIN CONTENT DASHBOARD
        ========================================= */
     .dashboard-grid {
       height: 600px;
@@ -177,9 +150,6 @@
       display: flex;
       justify-content: center;
       align-items: center;
-      opacity: 0;
-      animation: fadeRight .9s ease-out forwards;
-      animation-delay: .4s;
     }
 
     .section-headline h1 {
@@ -189,7 +159,7 @@
     }
 
     /* =========================================
-       6. PROJECTS SCROLLABLE AREA
+       5. PROJECTS SCROLLABLE AREA
        ========================================= */
     .projects-feed {
       grid-area: projects;
@@ -201,9 +171,6 @@
       height: 400px;
       padding: 20px;
       box-sizing: border-box;
-      opacity: 0;
-      animation: fadeRight .9s ease-out forwards;
-      animation-delay: .8s;
     }
 
     .projects-feed::-webkit-scrollbar {
@@ -303,7 +270,7 @@
 
 
     /* =========================================
-       7. MASTERY / SKILLS PANEL
+       6. MASTERY / SKILLS PANEL
        ========================================= */
     .skills-panel {
       grid-area: skills;
@@ -319,9 +286,6 @@
       align-items: center;
       justify-content: center;
       border: 2px solid white;
-      opacity: 0;
-      animation: fadeLeft .9s ease-out forwards;
-      animation-delay: 1s;
     }
 
     .skills-panel h2 {
@@ -366,10 +330,6 @@
   <header class="main-header">
     <div class="logo-text">
       <p>MKY.DEV</p>
-    </div>
-    <div class="header-metadata">
-      <p><small>@IT FREE ELECTIVE</small></p>
-      <p><small>BSIT 2-A</small></p>
     </div>
   </header>
 

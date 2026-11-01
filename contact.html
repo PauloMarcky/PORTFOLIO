@@ -23,34 +23,7 @@
     }
 
     /* =========================================
-       2. ANIMATIONS
-       ========================================= */
-    @keyframes fadeLeft {
-      from {
-        opacity: 0;
-        transform: translateX(40px);
-      }
-
-      to {
-        opacity: 1;
-        transform: translateX(-3px);
-      }
-    }
-
-    @keyframes fadeRight {
-      from {
-        opacity: 0;
-        transform: translateX(-40px);
-      }
-
-      to {
-        opacity: 1;
-        transform: translateX(-2px);
-      }
-    }
-
-    /* =========================================
-       3. TOP NAVIGATION HEADER
+       2. TOP NAVIGATION HEADER
        ========================================= */
     .top-header {
       background-color: #260044;
@@ -82,7 +55,7 @@
     }
 
     /* =========================================
-       4. SIDE NAVIGATION
+       3. SIDE NAVIGATION
        ========================================= */
     .side-nav-area {
       background-color: transparent;
@@ -160,7 +133,7 @@
     }
 
     /* =========================================
-       5. CONTACT SECTION LAYOUT
+       4. CONTACT SECTION LAYOUT
        ========================================= */
     .contact-card-wrapper {
       height: 450px;
@@ -177,7 +150,7 @@
       justify-content: center;
     }
 
-    /* Left Panel: Info */
+    /* Left Panel */
     .info-display-panel {
       grid-area: contact;
       background-color: hsla(288, 71%, 89%, 0.463);
@@ -186,9 +159,6 @@
       display: flex;
       flex-direction: column;
       justify-content: center;
-      opacity: 0;
-      animation: fadeRight .8s ease-out forwards;
-      animation-delay: .5s;
     }
 
     .info-display-panel h3 {
@@ -209,7 +179,6 @@
       font-weight: 100;
     }
 
-    /* Grid for Phone, Email, Location */
     .contact-details-list {
       display: grid;
       grid-template-columns: 50px 1fr;
@@ -244,7 +213,7 @@
       color: #260044;
     }
 
-    /* Right Panel: Form */
+    /* Right Panel */
     .contact-form-panel {
       grid-area: message;
       background-color: #ffffff;
@@ -260,9 +229,6 @@
       justify-items: center;
       align-items: center;
       padding: 20px 0;
-      opacity: 0;
-      animation: fadeLeft .9s ease-in-out forwards;
-      animation-delay: .9s;
     }
 
     .form-header-box h3 {
@@ -283,7 +249,6 @@
       text-align: center;
     }
 
-    /* Input Styling */
     .form-input {
       width: 250px;
       height: 30px;
@@ -336,10 +301,6 @@
   <header class="top-header">
     <div class="brand-logo">
       <p>MKY.DEV</p>
-    </div>
-    <div class="header-metadata">
-      <p><small>@IT FREE ELECTIVE</small></p>
-      <p><small>BSIT 2-A</small></p>
     </div>
   </header>
 
