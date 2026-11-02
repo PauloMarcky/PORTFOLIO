@@ -1,15 +1,15 @@
 .hero-showcase {
   background-color: hsla(288, 71%, 89%, 0.463);
-  height: 550px; width: 78em; border-radius: 30px; padding: 50px;
-  box-sizing: border-box; border: 5px solid white; margin-top: 50px;
-  display: grid; grid-template-columns: 700px 20em; grid-template-rows: 250px 90px 100px;
+  min-height: 550px; border-radius: 30px; padding: 50px;
+  box-sizing: border-box; border: 5px solid white;
+  display: grid; grid-template-columns: 1fr 20em; grid-template-rows: auto auto auto;
   grid-template-areas: 'name pic' 'expertise pic' 'cta pic';
-  align-items: center; justify-content: center;
+  align-content: center; align-items: center; row-gap: 30px; column-gap: 30px;
 }
 .name-intro { grid-area: name; }
-.name-intro h1 { color: white; font-size: 5em; font-family: 'Trebuchet MS'; margin: 0; }
+.name-intro h1 { color: white; font-size: clamp(2.4rem, 5vw, 5rem); font-family: 'Trebuchet MS'; margin: 0; }
 .expertise-sub-intro { grid-area: expertise; }
-.expertise-sub-intro h4 { color: #181818; font-size: 2em; font-family: Arial; margin: 0; }
+.expertise-sub-intro h4 { color: #181818; font-size: clamp(1.2rem, 2vw, 2rem); font-family: Arial; margin: 0; }
 .cta-button-box { grid-area: cta; justify-self: center; }
 .cta-button {
   display: flex; align-items: center; justify-content: center; text-decoration: none;
@@ -17,5 +17,14 @@
   font: bold 1em 'Segoe UI'; border: 2px solid #f8b0ff; transition: ease-out 0.1s;
 }
 .cta-button:hover { background-color: #9b59d0; }
-.profile-image-area { grid-area: pic; height: 100%; }
+.profile-image-area { grid-area: pic; height: 100%; min-height: 400px; }
 .profile-image { width: 100%; height: 100%; object-fit: cover; border-radius: 30px; object-position: 50% 15%; }
+
+@media (max-width: 900px) {
+  .hero-showcase {
+    grid-template-columns: 1fr; grid-template-areas: 'name' 'expertise' 'cta' 'pic';
+    padding: 30px 20px;
+  }
+  .cta-button-box { justify-self: start; }
+  .profile-image-area { min-height: 0; height: 320px; }
+}

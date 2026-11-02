@@ -1,6 +1,7 @@
 .contact-card-wrapper {
-  height: 450px; width: 78em; padding: 30px 50px; box-sizing: border-box; margin-top: 10px;
-  display: grid; grid-template-columns: 470px 630px; grid-template-rows: 27em; justify-content: center;
+  box-sizing: border-box; padding: 30px 0;
+  display: grid; grid-template-columns: minmax(0, 470px) minmax(0, 630px); grid-template-rows: 27em;
+  justify-content: center;
 }
 .info-display-panel {
   background-color: hsla(288, 71%, 89%, 0.463); border-radius: 40px 0 0 40px;
@@ -10,7 +11,7 @@
 .subtitle { color: #260044; font: 13px 'Segoe UI'; padding-left: 30px; margin: 10px 0 40px; }
 .contact-details-list { padding-left: 40px; }
 .contact-row { display: flex; align-items: center; gap: 10px; height: 60px; font-family: 'Segoe UI'; color: #260044; }
-.img-con { width: 40px; height: 40px; background-color: #ffffffa1; border-radius: 10px; display: flex; align-items: center; justify-content: center; }
+.img-con { width: 40px; height: 40px; background-color: #ffffffa1; border-radius: 10px; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
 .img-con img { width: 25px; height: 25px; object-fit: cover; }
 
 .contact-form-panel {
@@ -22,11 +23,21 @@
 .form-header-box h3 { margin: 5px; font: 500 2em 'Trebuchet MS'; color: #260044; }
 .form-header-box p { margin: 0 0 10px; font: 13px 'Segoe UI'; color: #260044; }
 .form-input, .form-textarea { border: none; border-bottom: 1px solid #a4a4a4; font-size: 0.8em; margin-top: 50px; }
-.form-input { width: 250px; height: 30px; }
-.form-textarea { grid-column: 1 / -1; width: 560px; height: 100px; resize: none; font-family: 'Segoe UI'; margin-top: 20px; }
+.form-input { width: 250px; max-width: 90%; height: 30px; }
+.form-textarea { grid-column: 1 / -1; width: 560px; max-width: 90%; height: 100px; resize: none; font-family: 'Segoe UI'; margin-top: 20px; }
 .form-input:focus, .form-textarea:focus { outline: none; border-bottom: 2px solid #7030a0; }
 .submit-btn {
   grid-column: 1 / -1; width: 200px; height: 50px; background-color: #9b59d0; border: 1px solid white;
   border-radius: 5px; color: white; font: 1.1em Arial; cursor: pointer; transition: ease-out 0.1s;
 }
 .submit-btn:hover { background-color: #7030a0; }
+
+@media (max-width: 900px) {
+  .contact-card-wrapper { grid-template-columns: 1fr; grid-template-rows: auto; }
+  .info-display-panel { border-radius: 30px 30px 0 0; padding: 30px 0; }
+  .info-display-panel h3 { font-size: 1.6em; }
+  .contact-form-panel {
+    border-radius: 0 0 20px 20px; grid-template-columns: 1fr; grid-template-rows: auto; row-gap: 20px;
+  }
+  .form-input, .form-textarea { margin-top: 0; width: 90%; }
+}

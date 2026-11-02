@@ -1,9 +1,8 @@
-// A component is just a function that returns JSX (HTML-like syntax).
-// Note: `class` becomes `className` in JSX.
+// Clicking the logo scrolls back to the top (the #home section).
 export default function Header() {
   return (
     <header className="top-header">
-      <span className="logo-text">MKY.DEV</span>
+      <a className="logo-text" href="#home">MKY.DEV</a>
     </header>
   )
 }

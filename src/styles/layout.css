@@ -1,27 +1,35 @@
-/* SHARED styles: previously copy-pasted in all 4 HTML files. */
+/* SHARED styles for the single scrolling page. */
 html { scroll-behavior: smooth; }
 body {
   margin: 0;
-  min-height: 100vh;
-  background: radial-gradient(circle at center, #efd0f7 0%, #9b59d0 30%, #7030a0 70%);
-}
-.app-shell {
-  height: 100vh; width: 100vw;
-  display: flex; align-items: center; justify-content: space-evenly;
-  overflow-x: hidden;
+  /* `fixed` keeps the gradient still while the content scrolls over it */
+  background: radial-gradient(circle at center, #efd0f7 0%, #9b59d0 30%, #7030a0 70%) fixed;
 }
 
 .top-header {
   background-color: #260044; width: 100%; height: 50px;
   position: fixed; top: 0; display: flex; align-items: center; z-index: 100;
 }
-.logo-text { font-family: Verdana; color: white; font-weight: bold; font-size: 1.3em; margin-left: 60px; }
+.logo-text {
+  font-family: Verdana; color: white; font-weight: bold; font-size: 1.3em;
+  margin-left: 60px; text-decoration: none;
+}
 
+/* Each section fills at least one screen. Padding keeps content clear of the header and side nav. */
+.page-section {
+  min-height: 100vh; box-sizing: border-box;
+  padding: 90px 40px 40px 160px;
+  display: flex; align-items: center; justify-content: center;
+}
+.page-section > div { width: 100%; max-width: 78em; }
+
+/* Side nav stays fixed on the left while the page scrolls */
 .side-nav-pill {
+  position: fixed; left: 20px; top: calc(50% + 25px); transform: translateY(-50%); z-index: 50;
   display: grid; grid-template-rows: repeat(4, auto); gap: 20px;
   background: linear-gradient(180deg, #7030a0 1%, #efd0f7 50%, #7030a0 99%);
-  width: 100px; height: 500px; border-radius: 50px;
-  justify-content: center; align-content: center; margin-top: 60px;
+  width: 100px; height: 500px; max-height: 80vh; border-radius: 50px;
+  justify-content: center; align-content: center;
 }
 .nav-item { display: flex; flex-direction: column; align-items: center; text-decoration: none; }
 .nav-item p { margin: 5px 0 0; font: 0.8em 'Segoe UI'; color: #000; }
@@ -32,6 +40,19 @@ body {
 }
 .nav-btn img { width: 20px; height: 20px; }
 .nav-item:hover .nav-btn { background-color: #cdcdcd; }
-/* `.active` is added by NavLink on the current page */
+/* `.active` is set by the scroll spy in SideNav.jsx for the section in view */
 .nav-item.active .nav-btn { background-color: #ea2dff7c; }
 .nav-item.active p { color: #7030a0; }
+
+/* Small screens: the side nav becomes a bottom bar */
+@media (max-width: 900px) {
+  .logo-text { margin-left: 20px; }
+  .page-section { padding: 80px 16px 110px; }
+  .side-nav-pill {
+    left: 50%; top: auto; bottom: 10px; transform: translateX(-50%);
+    width: calc(100% - 20px); max-width: 420px; height: 80px; max-height: none;
+    border-radius: 40px; gap: 0;
+    grid-template-rows: none; grid-auto-flow: column; grid-auto-columns: 1fr;
+    align-content: center; justify-items: center;
+  }
+}

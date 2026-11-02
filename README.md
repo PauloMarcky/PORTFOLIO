@@ -1,29 +1,28 @@
-# Portfolio (React)
+# Portfolio (React) — single scrolling page
 
 ## Run it
 1. Copy your original `images/` files into `public/images/`
 2. `npm install`
 3. `npm run dev`  → open the link it prints (usually http://localhost:5173)
 
-## Where things went
-| Old (HTML)                         | New (React)                          | Concept            |
-|------------------------------------|--------------------------------------|--------------------|
-| 4 separate .html files             | `src/pages/*.jsx` + `App.jsx` routes | components, routing|
-| Header/nav copy-pasted 4 times     | `Layout`, `Header`, `SideNav`        | reusable components|
-| 4 hand-written nav blocks          | `links` array + `.map()`             | rendering lists    |
-| `.nav-btn-active` per page         | `NavLink` `isActive`                 | automatic state    |
-| 6 copy-pasted project cards        | `ProjectCard` + `data/projects.js`   | props, data        |
-| Inputs with no behavior            | `useState` in `Contact.jsx`          | state, events      |
+## How the one-page layout works
+| Piece                         | What it does                                                        |
+|-------------------------------|---------------------------------------------------------------------|
+| `App.jsx`                     | Stacks `Home`, `About`, `Projects`, `Contact` one after another     |
+| `src/sections/*.jsx`          | Each section has an `id` (`home`, `about`, `projects`, `contact`)   |
+| `SideNav.jsx`                 | Anchor links (`#about`, ...) + scroll spy that highlights the section in view |
+| `layout.css`                  | `scroll-behavior: smooth` for animated jumps; fixed header/side nav |
+| `ProjectCard` + `data/projects.js` | Props + data: add a project by adding an object                |
+| `useState` in `Contact.jsx`   | Controlled form inputs                                              |
 
-## Learning path (do these in order)
-1. Change your name in `Home.jsx`, save, and watch the browser update.
+There is no router anymore, so `react-router-dom` was removed.
+
+## Learning path
+1. Change your name in `sections/Home.jsx`, save, and watch the browser update.
 2. Add a 7th project in `data/projects.js` (no JSX needed).
-3. Add a "Resume" link to `SideNav.jsx` + a new page + a `<Route>`.
-4. Add a click counter button with `useState` to understand re-rendering.
-5. Make the Contact form really send: try Formspree or EmailJS.
-6. Look up `useEffect`, then fetch your GitHub repos from the GitHub API
-   to build the project list automatically.
+3. Add a "Resume" section: new file in `sections/`, add it in `App.jsx`, and add an entry to `links` in `SideNav.jsx`.
+4. Make the Contact form really send: try Formspree or EmailJS.
+5. Look up `useEffect`, then fetch your GitHub repos from the GitHub API.
 
 ## Deploying to GitHub Pages
-`BrowserRouter` breaks on GitHub Pages refresh. Swap it for `HashRouter`
-in `main.jsx`, and set `base: '/your-repo-name/'` in `vite.config.js`.
+Set `base: '/your-repo-name/'` in `vite.config.js`. Since there is no router now, refreshing the page works without any `HashRouter` workaround.
