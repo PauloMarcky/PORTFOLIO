@@ -1,2 +1,5 @@
 node_modules
 dist
+
+# Brud Code workspace history
+.brud/

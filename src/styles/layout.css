@@ -8,51 +8,50 @@ body {
 
 .top-header {
   background-color: #260044; width: 100%; height: 50px;
-  position: fixed; top: 0; display: flex; align-items: center; z-index: 100;
+  position: fixed; top: 0; left: 0; display: flex; align-items: center; justify-content: space-between;
+  padding: 0 40px; box-sizing: border-box; z-index: 100;
 }
 .logo-text {
   font-family: Verdana; color: white; font-weight: bold; font-size: 1.3em;
-  margin-left: 60px; text-decoration: none;
+  text-decoration: none;
 }
 
-/* Each section fills at least one screen. Padding keeps content clear of the header and side nav. */
+/* Each section fills at least one screen. Top padding keeps content clear of the fixed header. */
 .page-section {
   min-height: 100vh; box-sizing: border-box;
-  padding: 90px 40px 40px 160px;
+  padding: 90px 40px 40px;
   display: flex; align-items: center; justify-content: center;
 }
 .page-section > div { width: 100%; max-width: 78em; }
 
-/* Side nav stays fixed on the left while the page scrolls */
-.side-nav-pill {
-  position: fixed; left: 20px; top: calc(50% + 25px); transform: translateY(-50%); z-index: 50;
-  display: grid; grid-template-rows: repeat(4, auto); gap: 20px;
-  background: linear-gradient(180deg, #7030a0 1%, #efd0f7 50%, #7030a0 99%);
-  width: 100px; height: 500px; max-height: 80vh; border-radius: 50px;
-  justify-content: center; align-content: center;
+/* Navigation links live in the header (NavLinks.jsx) */
+.top-nav { display: flex; align-items: center; gap: 8px; }
+.nav-link {
+  color: #f4e4fa; text-decoration: none; font: 0.95em 'Segoe UI';
+  padding: 6px 16px; border-radius: 20px; border: 1px solid transparent;
+  transition: background-color 0.15s ease-out, color 0.15s ease-out;
 }
-.nav-item { display: flex; flex-direction: column; align-items: center; text-decoration: none; }
-.nav-item p { margin: 5px 0 0; font: 0.8em 'Segoe UI'; color: #000; }
-.nav-btn {
-  width: 40px; height: 40px; border-radius: 20px; background-color: #f4f4f4;
-  display: flex; align-items: center; justify-content: center;
-  transition: ease-out 0.1s; cursor: pointer;
+.nav-link:hover { background-color: rgba(255, 255, 255, 0.12); }
+/* `.active` is set by the scroll spy in NavLinks.jsx for the section in view */
+.nav-link.active { color: #fff; background-color: #ea2dff7c; }
+/* "Contact" stands out as the main call to action */
+.nav-link.nav-cta { background-color: #7030a0; border-color: #f8b0ff; color: #fff; }
+.nav-link.nav-cta:hover, .nav-link.nav-cta.active { background-color: #9b59d0; }
+.nav-toggle {
+  display: none; background: none; border: none; color: #fff;
+  font-size: 1.6em; line-height: 1; cursor: pointer;
 }
-.nav-btn img { width: 20px; height: 20px; }
-.nav-item:hover .nav-btn { background-color: #cdcdcd; }
-/* `.active` is set by the scroll spy in SideNav.jsx for the section in view */
-.nav-item.active .nav-btn { background-color: #ea2dff7c; }
-.nav-item.active p { color: #7030a0; }
 
-/* Small screens: the side nav becomes a bottom bar */
+/* Small screens: the links collapse into a hamburger dropdown */
 @media (max-width: 900px) {
-  .logo-text { margin-left: 20px; }
-  .page-section { padding: 80px 16px 110px; }
-  .side-nav-pill {
-    left: 50%; top: auto; bottom: 10px; transform: translateX(-50%);
-    width: calc(100% - 20px); max-width: 420px; height: 80px; max-height: none;
-    border-radius: 40px; gap: 0;
-    grid-template-rows: none; grid-auto-flow: column; grid-auto-columns: 1fr;
-    align-content: center; justify-items: center;
+  .top-header { padding: 0 16px; }
+  .page-section { padding: 80px 16px 40px; }
+  .nav-toggle { display: block; }
+  .top-nav {
+    display: none; position: fixed; top: 50px; left: 0; right: 0;
+    flex-direction: column; align-items: stretch; gap: 4px; padding: 12px 16px 16px;
+    background-color: #260044; border-top: 1px solid #7030a0;
   }
+  .top-nav.open { display: flex; }
+  .nav-link { text-align: center; padding: 10px 14px; }
 }
