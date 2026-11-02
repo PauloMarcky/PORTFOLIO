@@ -1,0 +1,32 @@
+.contact-card-wrapper {
+  height: 450px; width: 78em; padding: 30px 50px; box-sizing: border-box; margin-top: 10px;
+  display: grid; grid-template-columns: 470px 630px; grid-template-rows: 27em; justify-content: center;
+}
+.info-display-panel {
+  background-color: hsla(288, 71%, 89%, 0.463); border-radius: 40px 0 0 40px;
+  border: 5px solid #fff; display: flex; flex-direction: column; justify-content: center;
+}
+.info-display-panel h3 { color: #fff; font: 500 2.3em 'Trebuchet MS'; padding-left: 30px; margin: 0; }
+.subtitle { color: #260044; font: 13px 'Segoe UI'; padding-left: 30px; margin: 10px 0 40px; }
+.contact-details-list { padding-left: 40px; }
+.contact-row { display: flex; align-items: center; gap: 10px; height: 60px; font-family: 'Segoe UI'; color: #260044; }
+.img-con { width: 40px; height: 40px; background-color: #ffffffa1; border-radius: 10px; display: flex; align-items: center; justify-content: center; }
+.img-con img { width: 25px; height: 25px; object-fit: cover; }
+
+.contact-form-panel {
+  background-color: #fff; border-radius: 0 20px 20px 0; padding: 20px 0;
+  display: grid; grid-template-columns: 50% 50%; grid-template-rows: 60px 60px 150px 1fr;
+  justify-items: center; align-items: center;
+}
+.form-header-box { grid-column: 1 / -1; text-align: center; }
+.form-header-box h3 { margin: 5px; font: 500 2em 'Trebuchet MS'; color: #260044; }
+.form-header-box p { margin: 0 0 10px; font: 13px 'Segoe UI'; color: #260044; }
+.form-input, .form-textarea { border: none; border-bottom: 1px solid #a4a4a4; font-size: 0.8em; margin-top: 50px; }
+.form-input { width: 250px; height: 30px; }
+.form-textarea { grid-column: 1 / -1; width: 560px; height: 100px; resize: none; font-family: 'Segoe UI'; margin-top: 20px; }
+.form-input:focus, .form-textarea:focus { outline: none; border-bottom: 2px solid #7030a0; }
+.submit-btn {
+  grid-column: 1 / -1; width: 200px; height: 50px; background-color: #9b59d0; border: 1px solid white;
+  border-radius: 5px; color: white; font: 1.1em Arial; cursor: pointer; transition: ease-out 0.1s;
+}
+.submit-btn:hover { background-color: #7030a0; }

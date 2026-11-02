@@ -1,0 +1,49 @@
+.dashboard-grid {
+  height: 600px; width: 78em; padding: 0 50px 30px; box-sizing: border-box;
+  display: grid; grid-template-columns: 700px 400px; grid-template-rows: 100px auto;
+  grid-template-areas: 'title title' 'projects skills'; align-items: center; justify-content: center;
+}
+.section-headline { grid-area: title; display: flex; justify-content: center; }
+.section-headline h1 { font: 2.8em 'Trebuchet MS'; color: white; }
+
+.projects-feed {
+  grid-area: projects; display: flex; flex-direction: column; row-gap: 20px;
+  overflow-y: scroll; overflow-x: hidden; height: 400px; padding: 20px; box-sizing: border-box;
+}
+.projects-feed::-webkit-scrollbar { background-color: #260044; width: 20px; border-radius: 10px; }
+.projects-feed::-webkit-scrollbar-thumb { background: white; border-radius: 10px; }
+
+.project-card {
+  flex-shrink: 0; width: 100%; height: 250px; background-color: #9b59d0c2; border-radius: 10px;
+  position: relative; overflow: hidden; border: 2px solid #7030a0; box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+}
+.project-thumbnail { position: absolute; inset: 0; }
+.project-thumbnail img { width: 100%; height: 100%; transition: filter 0.2s ease-in-out; }
+.project-details-overlay {
+  position: absolute; width: 100%; height: 100%; bottom: -100%; background-color: #ffffffa7;
+  transition: bottom 0.3s ease-in-out; display: flex; flex-direction: column;
+  justify-content: center; align-items: center; padding: 10px; box-sizing: border-box; row-gap: 10px;
+}
+.project-card:hover .project-details-overlay { bottom: 0; }
+.project-card:hover .project-thumbnail img { filter: blur(7px); }
+.project-title-text { font: bold 1.5em 'Segoe UI'; color: #7030a0; margin: 0; }
+.project-description { font: 1em Arial; text-align: center; margin: 5px 0; }
+.project-buttons { display: flex; gap: 10px; }
+.btn-action {
+  height: 50px; width: 200px; border-radius: 15px; font-size: 0.9em; color: #000;
+  display: flex; align-items: center; justify-content: center; text-decoration: none;
+}
+.btn-code { background-color: rgb(97, 255, 97); }
+.btn-live { background-color: rgb(255, 97, 97); }
+
+.skills-panel {
+  grid-area: skills; background-color: #7030a0; margin-left: 50px; height: 450px; padding: 20px;
+  box-sizing: border-box; border-radius: 10px; border: 2px solid white;
+  display: flex; flex-direction: column; row-gap: 13px; align-items: center; justify-content: center;
+}
+.skills-panel h2 { font-family: 'Trebuchet MS'; color: white; margin: 0 0 10px; }
+.skill-row { display: flex; column-gap: 20px; align-items: center; justify-content: center; width: 100%; }
+.skill-icon-img { width: 40px; height: 40px; object-fit: contain; }
+progress { appearance: none; height: 20px; width: 200px; }
+progress::-webkit-progress-value { background-color: #ccc; border-radius: 10px; }
+progress::-webkit-progress-bar { background-color: rgba(255, 255, 255, 0.2); border-radius: 10px; }

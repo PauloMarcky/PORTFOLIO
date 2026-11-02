@@ -1,0 +1,21 @@
+.hero-showcase {
+  background-color: hsla(288, 71%, 89%, 0.463);
+  height: 550px; width: 78em; border-radius: 30px; padding: 50px;
+  box-sizing: border-box; border: 5px solid white; margin-top: 50px;
+  display: grid; grid-template-columns: 700px 20em; grid-template-rows: 250px 90px 100px;
+  grid-template-areas: 'name pic' 'expertise pic' 'cta pic';
+  align-items: center; justify-content: center;
+}
+.name-intro { grid-area: name; }
+.name-intro h1 { color: white; font-size: 5em; font-family: 'Trebuchet MS'; margin: 0; }
+.expertise-sub-intro { grid-area: expertise; }
+.expertise-sub-intro h4 { color: #181818; font-size: 2em; font-family: Arial; margin: 0; }
+.cta-button-box { grid-area: cta; justify-self: center; }
+.cta-button {
+  display: flex; align-items: center; justify-content: center; text-decoration: none;
+  width: 220px; height: 50px; border-radius: 18px; background-color: #7030a0; color: white;
+  font: bold 1em 'Segoe UI'; border: 2px solid #f8b0ff; transition: ease-out 0.1s;
+}
+.cta-button:hover { background-color: #9b59d0; }
+.profile-image-area { grid-area: pic; height: 100%; }
+.profile-image { width: 100%; height: 100%; object-fit: cover; border-radius: 30px; object-position: 50% 15%; }
